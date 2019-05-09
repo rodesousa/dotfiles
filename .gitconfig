@@ -1,0 +1,32 @@
+[user]
+  name = rodesousa
+  email = dessroberto@gmail.com
+[core]
+  autocrlf = input
+  editor = nvim
+  trustctime = false
+  pager = diff-so-fancy | less --tabs=1,5 -R
+[alias]
+  cmm = commit -s -m
+  cma = commit --amend
+  cman = commit --amend --no-edit
+  ck = checkout
+  st = status
+  stu = status -u
+  stl = status .
+  lg = log --oneline --graph --decorate --color
+  aa = add -A
+  pr = pull --rebase
+  p = push
+  au = add -u
+  ce = config --global -e
+  auto-rebase = "!git pull --rebase && git rebase origin/master"
+[includeIf "gitdir:~/git/ritmx/"]
+  path = ~/git/ritmx/.gitritmx
+[includeIf "gitdir:~/git/thales/"]
+  path = ~/git/thales/.gitconfig
+[includeIf "gitdir:~/go/src/gitlab.thalesdigital.io/"]
+  path = ~/git/thales/.gitconfig
+
+[github]
+	user = rodesousa

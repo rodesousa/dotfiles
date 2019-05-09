@@ -1,0 +1,88 @@
+#alias
+
+alias l='ls -l'
+alias la='ls -la'
+alias rtl='ls -rtl'
+alias ..='cd ..'
+alias datef='echo `date +%Y-%m-%d`'
+
+#alias vi='vim'
+#alias ni=nvim
+#alias psbt="sbt -Dhttp.proxyHost=proxy.le-figaro.com -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy.le-figaro.com -Dhttps.proxyPort=8080 -Dhttp.nonProxyHosts='localhost|127.0.0.1|leacv|leaoffres|keljob-search-api|dev.keljob.com|keljob-api|*.adencf.local'"
+
+#docker stop
+docker_stop(){
+    docker stop $(docker ps -a -q)
+}
+alias dockerstop="docker_stop"
+
+#ip
+show_ip(){
+    wget http://ipinfo.io/ip -qO -
+}
+
+fvim() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
+
+# fuzzy grep open via ag
+fggrep() {
+  local file
+
+  file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1}')"
+
+  if [[ -n $file ]]
+  then
+     vim $file
+  fi
+}
+
+# fda - including hidden directories
+fcd() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+# fzf + git
+fga() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && git add "${files[@]}"
+}
+
+eval $(thefuck --alias)
+
+# git
+source ~/.git_prompt
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/rdesousa/google-cloud-sdk/path.bash.inc' ]; then source '/home/rdesousa/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/rdesousa/google-cloud-sdk/completion.bash.inc' ]; then source '/home/rdesousa/google-cloud-sdk/completion.bash.inc'; fi
+
+export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/application_default_credentials.json
+
+# GO
+export GOSRC=~/go/rdesousa
+export GOSRC=/home/rdesousa/go/src/github.com/rdesousa
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+#export GO111MODULE=on
+
+# k8s
+source <(helm completion bash)
+source <(kubectl completion bash)
+alias k8s="cat ~/.k8s"
+alias kgp="kubectl get pods"
+alias kgs="kubectl get secret"
+alias kgss="kubectl get service"
+alias kgin="kubectl get ingress"
+alias kl="kubectl logs"
+alias kx="kubectl exec -it"
+
+PATH=$PATH:/home/rdesousa/bin/elixir-ls/release
