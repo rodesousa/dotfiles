@@ -2,6 +2,7 @@
 packages:
 	@sudo ./install.sh
 	@pip3 install thefuck
+	@mkdir $(HOME)/bin
 
 .PHONY: config
 config:
@@ -19,3 +20,13 @@ neovim:
 	@sudo apt install neovim -y
 	@gem install neovim
 	@sudo npm install -g neovim
+
+golang:
+	@mkdir $(HOME)/go
+	@sudo apt-get install go-dep -y
+
+COMPDIR=$(pkg-config --variable=completionsdir bash-completion)
+k8s:
+	@git clone https://github.com/ahmetb/kubectx.git $(HOME)/git/kubectx
+	@ln -snf $(HOME)/git/kubectx/kubectx $(HOME)/bin/kubectlx
+	@ln -snf $(HOME)/git/kubectx/kubens $(HOME)/bin/kubens

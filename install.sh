@@ -5,6 +5,7 @@ apt-get install -y \
  	python-dev python-pip python-setuptools \
 	tree curl fzf
 
+snap install docker
 snap install kubectl --classic
 snap install helm --classic
 snap install ruby --classic

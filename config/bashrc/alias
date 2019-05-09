@@ -83,4 +83,4 @@ alias kgin="kubectl get ingress"
 alias kl="kubectl logs"
 alias kx="kubectl exec -it"
 
-PATH=$PATH:/home/rdesousa/bin/elixir-ls/release
+PATH=$PATH:/home/rdesousa/bin
