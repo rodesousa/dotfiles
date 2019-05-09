@@ -3,7 +3,7 @@
 apt-get install -y \
  	python3-dev python3-pip python3-setuptools \
  	python-dev python-pip python-setuptools \
-	tree curl fzf
+	tree curl fzf tig
 
 snap install docker
 snap install kubectl --classic

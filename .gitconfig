@@ -22,11 +22,11 @@
   ce = config --global -e
   auto-rebase = "!git pull --rebase && git rebase origin/master"
 [includeIf "gitdir:~/git/ritmx/"]
-  path = ~/git/ritmx/.gitritmx
+  path = ~/.config/git/ritmx
 [includeIf "gitdir:~/git/thales/"]
-  path = ~/git/thales/.gitconfig
+  path = ~/.config/git/thales
 [includeIf "gitdir:~/go/src/gitlab.thalesdigital.io/"]
-  path = ~/git/thales/.gitconfig
+  path = ~/.config/git/thales
 
 [github]
 	user = rodesousa
