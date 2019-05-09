@@ -117,3 +117,5 @@ if ! shopt -oq posix; then
 fi
 
 source ~/.config/bashrc/alias
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

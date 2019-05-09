@@ -55,9 +55,7 @@ fga() {
 eval $(thefuck --alias)
 
 # git
-source ~/.git_prompt
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+source ~/.config/git/git_prompt
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/rdesousa/google-cloud-sdk/path.bash.inc' ]; then source '/home/rdesousa/google-cloud-sdk/path.bash.inc'; fi
