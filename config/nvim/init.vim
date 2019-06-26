@@ -6,6 +6,9 @@ if filereadable(expand("~/.config/nvim/plug.vim"))
   source ~/.config/nvim/plug.vim
 endif
 
+" color
+colorscheme abstract
+
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
   autocmd!
@@ -21,12 +24,13 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+"set list
+set expandtab
 
 " Generally configure tabs to 2, and convert to spaces
 set tabstop=2
 set backspace=2
 set softtabstop=2
-set expandtab
 set shiftwidth=2
 set shiftround
 set nojoinspaces
@@ -41,7 +45,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 set bomb
-set binary
+
 
 " Map leader to ,
 let mapleader=','
@@ -79,9 +83,9 @@ highlight GitGutterAdd    ctermfg=121 ctermbg=121
 highlight GitGutterChange ctermfg=74 ctermbg=74
 highlight GitGutterDelete ctermfg=167 ctermbg=167
 
-" vim-go
-"let g:go_fmt_command = "goimports" "auto add/remove import
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+"" vim-go
+"let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_fmt_command = "goimports" "auto add/remove import
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -94,7 +98,8 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 1
-let g:go_metalinter_autosave = 1
+let g:go_code_completion_enabled = 0
+let g:go_metalinter_autosave = 0 " autolint when save
 
 " elixir
 let g:alchemist_tag_map = '<C-b>'
@@ -102,6 +107,8 @@ let g:alchemist_tag_stack_map = '<C-T>'
 let g:mix_format_on_save = 1
 let g:mix_format_options = '--check-equivalent'
 
+" gist
+let g:gist_show_privates = 1
 
 """ Shortcurts
 

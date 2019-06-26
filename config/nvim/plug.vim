@@ -57,5 +57,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 " python
 Plug 'zchee/deoplete-jedi'
 
+" color
+Plug 'jdsimcoe/abstract.vim'
 
 call plug#end()

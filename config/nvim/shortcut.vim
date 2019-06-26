@@ -37,6 +37,10 @@ vmap d} c{<C-r>"}
 nmap d} viwc{<C-r>"}<Esc>
 vmap d] c[<C-r>"]
 nmap d] viwc[<C-r>"]<Esc>
+vmap d* c*<C-r>"*
+nmap d* viwc*<C-r>"*<Esc>
+vmap d` c`<C-r>"`
+nmap d` viwc`<C-r>"`<Esc>
 
 "LCN
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -44,5 +48,16 @@ nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> <C-b> :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
-" split/join
-" gs | gS
+" vim-go
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+
+" helper
+" CTRL-O previous location
+
+" UPPERCASE/lowercase
+" g~
+" gu
+" gU
+
+" gist
+" :Gist -l -> gist list
