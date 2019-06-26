@@ -10,7 +10,7 @@ apt-get install -y \
 	python-dev python-pip python-setuptools \
 	tree curl fzf tig \
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
-	elixir esl-erlang
+	elixir esl-erlang inotify-tools
 
 snap install docker
 snap install kubectl --classic
