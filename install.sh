@@ -8,9 +8,10 @@ apt update
 apt-get install -y \
 	python3-dev python3-pip python3-setuptools \
 	python-dev python-pip python-setuptools \
-	tree curl fzf tig \
+	tree curl fzf tig silversearcher-ag \
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
 	elixir esl-erlang inotify-tools
+
 
 snap install docker
 snap install kubectl --classic
