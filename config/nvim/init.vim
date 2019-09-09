@@ -106,6 +106,7 @@ let g:alchemist_tag_map = '<C-b>'
 let g:alchemist_tag_stack_map = '<C-T>'
 let g:mix_format_on_save = 1
 let g:mix_format_options = '--check-equivalent'
+let g:alchemist_tag_disable = 1
 
 " gist
 let g:gist_show_privates = 1
@@ -116,3 +117,8 @@ if filereadable(expand("~/.config/nvim/shortcut.vim"))
   source ~/.config/nvim/shortcut.vim
 endif
 
+" vim-guntentags
+let g:gutentags_cache_dir = '~/.tags_cache'
+
+" neomake
+autocmd! BufWritePost * Neomake

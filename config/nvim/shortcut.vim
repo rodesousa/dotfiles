@@ -51,6 +51,9 @@ nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 " vim-go
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
+" vim-go
+autocmd FileType elixir nmap <C-b> :ExDef<CR>
+
 " helper
 " CTRL-O previous location
 
@@ -61,3 +64,8 @@ autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
 " gist
 " :Gist -l -> gist list
+"
+
+" Elixir
+" K for doc
+" CTRl-b go to

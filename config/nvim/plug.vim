@@ -41,8 +41,10 @@ Plug 'mattn/gist-vim'
 
 " Elixir formatting
 Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
-Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'c-brenn/phoenix.vim'
+Plug 'tpope/vim-projectionist'
+Plug 'slashmili/alchemist.vim'
 
 " airline
 Plug 'vim-airline/vim-airline'
@@ -59,5 +61,9 @@ Plug 'zchee/deoplete-jedi'
 
 " color
 Plug 'jdsimcoe/abstract.vim'
+
+Plug 'neomake/neomake'
+
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
