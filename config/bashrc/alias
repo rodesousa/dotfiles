@@ -4,6 +4,7 @@ alias l='ls -l'
 alias la='ls -la'
 alias rtl='ls -rtl'
 alias ..='cd ..'
+alias cdp='cd -P'
 alias datef='echo `date +%Y-%m-%d`'
 
 #alias vi='vim'
@@ -66,8 +67,7 @@ if [ -f '/home/rdesousa/google-cloud-sdk/completion.bash.inc' ]; then source '/h
 export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/application_default_credentials.json
 
 # GO
-export GOSRC=~/go/rdesousa
-export GOSRC=/home/rdesousa/go/src/github.com/rdesousa
+export GOSRC=/home/rdesousa/go/src/github.com/rodesousa
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 #export GO111MODULE=on
