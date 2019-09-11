@@ -68,4 +68,5 @@ Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 
+Plug 'majutsushi/tagbar'
 call plug#end()

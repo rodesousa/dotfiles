@@ -41,6 +41,8 @@ vmap d* c*<C-r>"*
 nmap d* viwc*<C-r>"*<Esc>
 vmap d` c`<C-r>"`
 nmap d` viwc`<C-r>"`<Esc>
+vmap d< c<<C-r>">
+nmap d< viwc<<C-r>"><Esc>
 
 "LCN
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -56,6 +58,16 @@ autocmd FileType elixir nmap <C-b> :ExDef<CR>
 
 " gundo
 noremap <F4> :GundoToggle<CR>
+
+" git
+noremap <Leader>d :Gdiffsplit<CR>
+
+" search
+noremap <Leader>f :Ag<CR>
+
+" ctags
+nmap <F6> :TagbarToggle<CR>
+
 
 " helper
 " CTRL-O previous location

@@ -122,3 +122,6 @@ let g:gutentags_cache_dir = '~/.tags_cache'
 
 " neomake
 autocmd! BufWritePost * Neomake
+
+" tags
+let g:fzf_tags_command = 'ctags -R'
