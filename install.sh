@@ -10,7 +10,7 @@ apt-get install -y \
 	python-dev python-pip python-setuptools \
 	tree curl fzf tig silversearcher-ag \
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
-	elixir esl-erlang inotify-tools
+	elixir esl-erlang inotify-tools ctags
 
 
 snap install docker
