@@ -54,6 +54,9 @@ autocmd FileType go nmap <Leader>i <Plug>(go-info)
 " vim-go
 autocmd FileType elixir nmap <C-b> :ExDef<CR>
 
+" gundo
+noremap <F4> :GundoToggle<CR>
+
 " helper
 " CTRL-O previous location
 

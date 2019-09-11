@@ -66,4 +66,6 @@ Plug 'neomake/neomake'
 
 Plug 'ludovicchabant/vim-gutentags'
 
+Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+
 call plug#end()
