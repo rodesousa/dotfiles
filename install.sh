@@ -10,16 +10,16 @@ sudo apt-get install -y \
 	python-dev python-pip python-setuptools \
 	tree curl fzf tig silversearcher-ag \
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
-	elixir esl-erlang inotify-tools ctags terminator
+	elixir esl-erlang inotify-tools ctags terminator thefuck \
+  ruby-full gem
 
 pip3 install thefuck
 
-snap install docker
-snap install kubectl --classic
-snap install helm --classic
-snap install ruby --classic
-snap install go --classic
-snap install node --edge --classic
+sudo snap install docker
+sudo snap install kubectl --classic
+sudo snap install helm --classic
+sudo snap install go --classic
+sudo snap install node --edge --classic
 
 sudo npm install diff-so-fancy -g
 
