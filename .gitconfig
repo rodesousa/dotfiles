@@ -27,6 +27,8 @@
   path = ~/.config/git/thales
 [includeIf "gitdir:~/go/src/gitlab.thalesdigital.io/"]
   path = ~/.config/git/thales
+[includeIf "gitdir:~/git/pandascore/"]
+  path = ~/.config/git/pandascore
 
 [github]
 	user = rodesousa
