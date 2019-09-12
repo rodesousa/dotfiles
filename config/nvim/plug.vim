@@ -1,4 +1,4 @@
-call plug#begin()
+﻿call plug#begin()
 
 " Nerdtree
 Plug 'scrooloose/nerdtree'
@@ -68,5 +68,8 @@ Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
+
+Plug 'tpope/vim-surround'
+
 call plug#end()

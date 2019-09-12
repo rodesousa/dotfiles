@@ -63,7 +63,7 @@ noremap <F4> :GundoToggle<CR>
 noremap <Leader>d :Gdiffsplit<CR>
 
 " search
-noremap <Leader>f :Ag<CR>
+noremap <Leader>f :Rg<CR>
 
 " ctags
 nmap <F6> :TagbarToggle<CR>
