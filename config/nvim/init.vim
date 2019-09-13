@@ -44,7 +44,8 @@ set noswapfile
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
-set bomb
+set nobomb
+setlocal nobomb
 
 
 " Map leader to ,
@@ -125,3 +126,9 @@ autocmd! BufWritePost * Neomake
 
 " tags
 let g:fzf_tags_command = 'ctags -R'
+
+""" Vim-Plug
+
+if filereadable(expand("~/.config/nvim/abb.vim"))
+  source ~/.config/nvim/abb.vim
+endif

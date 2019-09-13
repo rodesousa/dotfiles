@@ -11,7 +11,8 @@ sudo apt-get install -y \
 	tree curl fzf tig silversearcher-ag \
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
 	elixir esl-erlang inotify-tools ctags terminator thefuck \
-  ruby-full gem
+  ruby-full gem \
+  gimp
 
 pip3 install thefuck
 
