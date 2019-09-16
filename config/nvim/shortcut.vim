@@ -1,6 +1,7 @@
 " NERD
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
+" Shift+i show hide files
 
 " terminal
 nnoremap <silent> <leader>sh :terminal<CR>
