@@ -1,4 +1,4 @@
-﻿call plug#begin()
+call plug#begin()
 
 " Nerdtree
 Plug 'scrooloose/nerdtree'
@@ -7,10 +7,14 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdcommenter'
 
 "LCN
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+"Plug 'autozimu/LanguageClient-neovim', {
+    "\ 'branch': 'next',
+    "\ 'do': 'bash install.sh',
+    "\ }
+
+"Plug 'prabirshrestha/async.vim'
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'dense-analysis/ale'
 
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -39,7 +43,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 
-" Elixir formatting
+"" Elixir formatting
 Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'c-brenn/phoenix.vim'
@@ -64,7 +68,7 @@ Plug 'jdsimcoe/abstract.vim'
 
 Plug 'neomake/neomake'
 
-Plug 'ludovicchabant/vim-gutentags'
+"Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 

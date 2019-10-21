@@ -127,6 +127,37 @@ autocmd! BufWritePost * Neomake
 " tags
 let g:fzf_tags_command = 'ctags -R'
 
+"let g:ale_linters = { 'elixir': ['elixir-ls']}
+"let g:ale_fixers = { 'elixir': ['mix_format'],}
+"let g:ale_completion_enabled = 1
+"let g:ale_elixir_elixir_ls_release = '/home/rodesousa/git/elixir-ls/rel'
+
+" LC
+let g:LanguageClient_serverCommands = {
+\ 'elixir': ['/home/rodesousa/git/elixir-ls/rel/language_server.sh'],
+\ }
+let g:LanguageClient_hasSnippetSupport = 0
+
+hi Search cterm=NONE ctermfg=white ctermbg=red
+
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep('rg --column --no-heading --line-number --color=always '.shellescape(<q-args>),
+  \ 1,
+  \ fzf#vim#with_preview(),
+  \ <bang>0)
+
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
+" neomake
+"let g:neomake_open_list = 2
+"let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+
 """ Vim-Plug
 
 if filereadable(expand("~/.config/nvim/abb.vim"))

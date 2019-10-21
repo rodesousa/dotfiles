@@ -49,13 +49,18 @@ nmap d< viwc<<C-r>"><Esc>
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> <C-b> :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+":copen pour dialyzer
+
+let g:LanguageClient_rootMarkers = {
+    \ 'elixir': ['mix.exs'],
+    \ }
 
 " vim-go
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
-" vim-go
+" vim-elixir
 autocmd FileType elixir nmap <C-b> :ExDef<CR>
+"autocmd FileType elixir nmap <C-b>b :vs<CR>:ExDef<CR>
 
 " gundo
 noremap <F4> :GundoToggle<CR>
@@ -68,7 +73,6 @@ noremap <Leader>f :Rg<CR>
 
 " ctags
 nmap <F6> :TagbarToggle<CR>
-
 
 " helper
 " CTRL-O previous location
