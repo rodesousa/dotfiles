@@ -52,25 +52,25 @@ setlocal nobomb
 let mapleader=','
 
 " LSP
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {}
-let g:LanguageClient_serverCommands.go = ['go-langserver', '-gocodecompletion']
-"let g:LanguageClient_serverCommands.go = ['gopls']
-" go get -u golang.org/x/tools/cmd/gopls
-"let g:LanguageClient_serverCommands.elixir = ['language_server.sh']
-" git clone git@github.com:JakeBecker/elixir-ls.git ~/.elixir_ls
-" cd ~/.elixir_ls
-" mix deps.get && mix compile
-" mix elixir_ls.release - .
-" add it to the $PATH
-let g:LanguageClient_serverCommands['javascript'] = ['javascript-typescript-stdio']
-let g:LanguageClient_serverCommands['typescript'] = ['javascript-typescript-stdio']
-let g:LanguageClient_serverCommands['javascript.jsx'] = ['javascript-typescript-stdio']
-" yarn global add javascript-typescript-langserver   -or-
-" npm i -g javascript-typescript-langserver
-let g:LanguageClient_serverCommands.reason = ['ocaml-language-server', '--stdio']
-let g:LanguageClient_serverCommands.ocaml = ['ocaml-language-server', '--stdio']
-" opam init
+"let g:LanguageClient_autoStart = 1
+"let g:LanguageClient_serverCommands = {}
+"let g:LanguageClient_serverCommands.go = ['go-langserver', '-gocodecompletion']
+""let g:LanguageClient_serverCommands.go = ['gopls']
+"" go get -u golang.org/x/tools/cmd/gopls
+""let g:LanguageClient_serverCommands.elixir = ['language_server.sh']
+"" git clone git@github.com:JakeBecker/elixir-ls.git ~/.elixir_ls
+"" cd ~/.elixir_ls
+"" mix deps.get && mix compile
+"" mix elixir_ls.release - .
+"" add it to the $PATH
+"let g:LanguageClient_serverCommands['javascript'] = ['javascript-typescript-stdio']
+"let g:LanguageClient_serverCommands['typescript'] = ['javascript-typescript-stdio']
+"let g:LanguageClient_serverCommands['javascript.jsx'] = ['javascript-typescript-stdio']
+"" yarn global add javascript-typescript-langserver   -or-
+"" npm i -g javascript-typescript-langserver
+"let g:LanguageClient_serverCommands.reason = ['ocaml-language-server', '--stdio']
+"let g:LanguageClient_serverCommands.ocaml = ['ocaml-language-server', '--stdio']
+"" opam init
 " opam install merlin
 " opam user-setup install
 " yarn global add ocaml-language-server   -or-
@@ -103,11 +103,11 @@ let g:go_code_completion_enabled = 0
 let g:go_metalinter_autosave = 0 " autolint when save
 
 " elixir
-let g:alchemist_tag_map = '<C-b>'
-let g:alchemist_tag_stack_map = '<C-T>'
+let g:alchemist_tag_map = '<Leader> et'
+let g:alchemist_tag_stack_map = '<Leader> es'
 let g:mix_format_on_save = 1
 let g:mix_format_options = '--check-equivalent'
-let g:alchemist_tag_disable = 1
+"let g:alchemist_tag_disable = 1
 
 " gist
 let g:gist_show_privates = 1
@@ -121,25 +121,10 @@ endif
 " vim-guntentags
 let g:gutentags_cache_dir = '~/.tags_cache'
 
-" neomake
-autocmd! BufWritePost * Neomake
-
 " tags
 let g:fzf_tags_command = 'ctags -R'
 
-"let g:ale_linters = { 'elixir': ['elixir-ls']}
-"let g:ale_fixers = { 'elixir': ['mix_format'],}
-"let g:ale_completion_enabled = 1
-"let g:ale_elixir_elixir_ls_release = '/home/rodesousa/git/elixir-ls/rel'
-
-" LC
-let g:LanguageClient_serverCommands = {
-\ 'elixir': ['/home/rodesousa/git/elixir-ls/rel/language_server.sh'],
-\ }
-let g:LanguageClient_hasSnippetSupport = 0
-
 hi Search cterm=NONE ctermfg=white ctermbg=red
-
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep('rg --column --no-heading --line-number --color=always '.shellescape(<q-args>),
@@ -155,8 +140,9 @@ command! -bang -nargs=* Ag
   \                 <bang>0)
 
 " neomake
-"let g:neomake_open_list = 2
 "let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+"autocmd FileType elixir autocmd! BufReadPost,BufWritePost * Neomake elixir
+"let g:neomake_open_list = 2
 
 """ Vim-Plug
 

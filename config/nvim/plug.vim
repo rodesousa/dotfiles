@@ -6,16 +6,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdcommenter'
 
-"LCN
-"Plug 'autozimu/LanguageClient-neovim', {
-    "\ 'branch': 'next',
-    "\ 'do': 'bash install.sh',
-    "\ }
-
-"Plug 'prabirshrestha/async.vim'
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'dense-analysis/ale'
-
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -33,9 +23,9 @@ Plug 'sheerun/vim-polyglot'         " Languages support.
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
   
-"" Add :Gist commands
-"Plug 'mattn/webapi-vim'
-"Plug 'mattn/gist-vim'
+""" Add :Gist commands
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
   
 " Git
 Plug 'tpope/vim-fugitive'
@@ -43,7 +33,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 
-"" Elixir formatting
+" Elixir formatting
 Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'c-brenn/phoenix.vim'
@@ -60,13 +50,13 @@ Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 " split block or joined
 Plug 'AndrewRadev/splitjoin.vim'
 
-" python
+"" python
 Plug 'zchee/deoplete-jedi'
 
 " color
 Plug 'jdsimcoe/abstract.vim'
 
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
 
 "Plug 'ludovicchabant/vim-gutentags'
 
@@ -75,5 +65,7 @@ Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 "Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-surround'
+
+Plug 'rhysd/vim-fixjson'
 
 call plug#end()

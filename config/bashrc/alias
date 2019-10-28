@@ -4,6 +4,7 @@ alias l='ls -l'
 alias la='ls -la'
 alias rtl='ls -rtl'
 alias ..='cd ..'
+alias ...='cd ../..'
 alias cdp='cd -P'
 alias datef='echo `date +%Y-%m-%d`'
 

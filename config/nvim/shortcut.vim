@@ -45,22 +45,12 @@ nmap d` viwc`<C-r>"`<Esc>
 vmap d< c<<C-r>">
 nmap d< viwc<<C-r>"><Esc>
 
-"LCN
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> <C-b> :call LanguageClient#textDocument_definition()<CR>
-":copen pour dialyzer
-
-let g:LanguageClient_rootMarkers = {
-    \ 'elixir': ['mix.exs'],
-    \ }
-
 " vim-go
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
 " vim-elixir
 autocmd FileType elixir nmap <C-b> :ExDef<CR>
-"autocmd FileType elixir nmap <C-b>b :vs<CR>:ExDef<CR>
+autocmd FileType elixir nmap <Leader>el :Neomake elixir<CR>
 
 " gundo
 noremap <F4> :GundoToggle<CR>
