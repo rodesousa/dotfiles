@@ -56,7 +56,7 @@ Plug 'zchee/deoplete-jedi'
 " color
 Plug 'jdsimcoe/abstract.vim'
 
-"Plug 'neomake/neomake'
+Plug 'neomake/neomake'
 
 "Plug 'ludovicchabant/vim-gutentags'
 
@@ -67,5 +67,7 @@ Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 Plug 'tpope/vim-surround'
 
 Plug 'rhysd/vim-fixjson'
+
+"Plug 'dense-analysis/ale'
 
 call plug#end()

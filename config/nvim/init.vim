@@ -140,12 +140,28 @@ command! -bang -nargs=* Ag
   \                 <bang>0)
 
 " neomake
-"let g:neomake_elixir_enabled_makers = ['mix', 'credo']
-"autocmd FileType elixir autocmd! BufReadPost,BufWritePost * Neomake elixir
+let g:neomake_elixir_dialyzer_maker = {
+    \ 'exe': 'mix',
+    \ 'args': ['dialyzer'],
+    \ 'append_file': 0
+\ }
+let g:neomake_elixir_enabled_makers = ['credo', 'mix', 'dogma', 'elixir', "dialyzer"]
+autocmd! BufReadPost,BufWritePost * Neomake
 "let g:neomake_open_list = 2
 
-""" Vim-Plug
+" ale
+"let g:ale_elixir_elixir_ls_release='/home/rodesousa/git/elixir-ls/rel'
+"let g:ale_linters = {
+"      \   'elixir': ['credo', 'dialyxir']
+"      \}
+"let g:ale_lint_on_save = 1
+"let g:ale_open_list = 1
+"augroup CloseLoclistWindowGroup
+   "autocmd!
+   "autocmd QuitPre * if empty(&buftype) | lclose | endif
+"augroup END
 
+""" Vim-Plug
 if filereadable(expand("~/.config/nvim/abb.vim"))
   source ~/.config/nvim/abb.vim
 endif
