@@ -12,3 +12,4 @@ abbrev emdoc @moduledoc """
 
 abbrev etag @tag :aze # mix test --only aze
 abbrev eput Map.put(
+abbrev insp \|> IO.inspect()

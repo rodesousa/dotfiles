@@ -3,6 +3,15 @@
 # elixir
 wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
 
+sudo apt-get remove docker docker-engine docker.io containerd runc
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
 sudo apt update
 
 sudo apt-get install -y \
@@ -11,12 +20,13 @@ sudo apt-get install -y \
 	tree curl fzf tig silversearcher-ag \
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
 	elixir esl-erlang inotify-tools ctags terminator thefuck \
-  ruby-full gem \
+  ruby-full gem jq \
+  docker-ce docker-ce-cli containerd.io \
   gimp
 
 pip3 install thefuck
 
-sudo snap install docker
+sudo snap install postman
 sudo snap install kubectl --classic
 sudo snap install helm --classic
 sudo snap install go --classic

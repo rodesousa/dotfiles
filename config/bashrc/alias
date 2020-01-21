@@ -54,6 +54,13 @@ fga() {
   [[ -n "$files" ]] && git add "${files[@]}"
 }
 
+klo() {
+  pod="$(kubectl get po -o wide|tail -n+2|fzf -n1 --reverse --tac --preview='kubectl logs --tail=20 --all-containers=true {1}' --preview-window=down:50%:hidden --bind=ctrl-p:toggle-preview --header="^P: Preview Logs"|awk '{print $1}')"
+  if [[ -n $pod ]]; then
+    kubectl logs --all-containers=true $pod
+  fi
+}
+
 eval $(thefuck --alias)
 
 # git
@@ -81,7 +88,8 @@ alias kgp="kubectl get pods"
 alias kgs="kubectl get secret"
 alias kgss="kubectl get service"
 alias kgin="kubectl get ingress"
-alias kl="kubectl logs"
 alias kx="kubectl exec -it"
+alias kdp="kubectl describe pod"
+alias kl="kubectl logs"
 
 PATH=$PATH:/home/rdesousa/bin
