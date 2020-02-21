@@ -149,6 +149,35 @@ let g:neomake_elixir_enabled_makers = ['credo', 'mix', 'dogma', 'elixir', "dialy
 autocmd! BufReadPost,BufWritePost * Neomake
 "let g:neomake_open_list = 2
 
+" tagbar
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'p:protocols',
+        \ 'm:modules',
+        \ 'e:exceptions',
+        \ 'y:types',
+        \ 'd:delegates',
+        \ 'f:functions',
+        \ 'c:callbacks',
+        \ 'a:macros',
+        \ 't:tests',
+        \ 'i:implementations',
+        \ 'o:operators',
+        \ 'r:records'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 'p' : 'protocol',
+        \ 'm' : 'module'
+    \ },
+    \ 'scope2kind' : {
+        \ 'protocol' : 'p',
+        \ 'module' : 'm'
+    \ },
+    \ 'sort' : 0
+    \ }
+
 " ale
 "let g:ale_elixir_elixir_ls_release='/home/rodesousa/git/elixir-ls/rel'
 "let g:ale_linters = {

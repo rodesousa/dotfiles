@@ -125,3 +125,8 @@ if [ -f '/home/rodesousa/google-cloud-sdk/path.bash.inc' ]; then . '/home/rodeso
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/rodesousa/google-cloud-sdk/completion.bash.inc' ]; then . '/home/rodesousa/google-cloud-sdk/completion.bash.inc'; fi
+
+
+source /home/rodesousa/git/pandascore/utilities/scripts/source.sh
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"

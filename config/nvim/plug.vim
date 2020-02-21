@@ -34,12 +34,14 @@ Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 
 " Elixir formatting
-"Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
+Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 Plug 'elixir-editors/vim-elixir'
-"Plug 'c-brenn/phoenix.vim'
+Plug 'c-brenn/phoenix.vim'
 Plug 'tpope/vim-projectionist'
-"Plug 'slashmili/alchemist.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'slashmili/alchemist.vim'
+
+" rust
+Plug 'rust-lang/rust.vim'
 
 " airline
 Plug 'vim-airline/vim-airline'
@@ -63,7 +65,7 @@ Plug 'neomake/neomake'
 
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 
-"Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 Plug 'tpope/vim-surround'
 
