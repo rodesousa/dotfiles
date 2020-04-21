@@ -92,4 +92,8 @@ alias kx="kubectl exec -it"
 alias kdp="kubectl describe pod"
 alias kl="kubectl logs"
 
+#helper
+alias helpers="l ~/.config/helper/"
+alias helper_cpu="cat ~/.config/helper/cpu"
+
 PATH=$PATH:/home/rdesousa/bin

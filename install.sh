@@ -37,6 +37,7 @@ sudo npm install diff-so-fancy -g
 sudo addgroup --system docker
 sudo adduser $USER docker
 newgrp docker
+sudo chmod 666 /var/run/docker.sock
 
 # config git
 git config --global user.email "dessroberto.gmail.com"
