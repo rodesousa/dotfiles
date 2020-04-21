@@ -1,62 +1,62 @@
 call plug#begin()
 
-" Nerdtree
+"" Nerdtree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdcommenter'
 
-" fzf
+"" fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" deoplete
+"" deoplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-" cursors
+"" cursors
 Plug 'terryma/vim-multiple-cursors'
 
-" Syntax highlighting
+"" Syntax highlighting
 Plug 'sheerun/vim-polyglot'         " Languages support.
 
-" snipet
+"" snipet
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
   
-""" Add :Gist commands
+"""" Add :Gist commands
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
   
-" Git
+"" Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/webapi-vim'
 Plug 'mattn/gist-vim'
 
-" Elixir formatting
+"" Elixir formatting
 Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'c-brenn/phoenix.vim'
 Plug 'tpope/vim-projectionist'
 Plug 'slashmili/alchemist.vim'
 
-" rust
+"" rust
 Plug 'rust-lang/rust.vim'
 
-" airline
+"" airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-"Go
+""Go
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 
-" split block or joined
+"" split block or joined
 Plug 'AndrewRadev/splitjoin.vim'
 
-"" python
+""" python
 Plug 'zchee/deoplete-jedi'
 
-" color
+"" color
 Plug 'jdsimcoe/abstract.vim'
 
 Plug 'neomake/neomake'

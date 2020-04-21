@@ -3,7 +3,7 @@
 - install git
 
 ```
-sudo apt get install git
+make init
 ```
 
 - run packages
@@ -21,7 +21,7 @@ make neovim
 - run config
 
 ```
-make config
+CURDIR=`pwd` make config
 ```
 
 - run golang

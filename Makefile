@@ -1,10 +1,16 @@
 .PHONY: packages
 packages:
 	./install.sh
-	
+
+.PHONY: init
+init:
+	@sudo apt update
+	@sudo apt install git -y
+	@mkdir $(HOME)/bin
 
 .PHONY: config
 config:
+	echo $(CURDIR)
 	@ln -snf $(CURDIR)/config/bashrc $(HOME)/.config/bashrc
 	@ln -snf $(CURDIR)/.bashrc $(HOME)/.bashrc
 	@ln -snf $(CURDIR)/.gitconfig $(HOME)/.gitconfig

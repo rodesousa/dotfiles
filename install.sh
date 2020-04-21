@@ -1,9 +1,8 @@
 #! /usr/bin/bash
 
-# elixir
-wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
-
 sudo apt-get remove docker docker-engine docker.io containerd runc
+
+sudo apt install curl -y
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
@@ -19,12 +18,12 @@ sudo apt-get install -y \
 	python-dev python-pip python-setuptools \
 	tree curl fzf tig silversearcher-ag \
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
-	elixir esl-erlang inotify-tools ctags terminator thefuck \
+	elixir inotify-tools exuberant-ctags terminator thefuck \
   ruby-full gem jq \
   docker-ce docker-ce-cli containerd.io \
   gimp
 
-pip3 install thefuck
+pip2 install thefuck
 
 sudo snap install postman
 sudo snap install kubectl --classic
@@ -43,5 +42,3 @@ newgrp docker
 git config --global user.email "dessroberto.gmail.com"
 git config --global user.name "Roberto De Sousa"
 
-# never SUDO !
-mkdir $HOME/bin
