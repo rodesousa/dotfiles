@@ -1,2 +1,5 @@
 # number of CPU
 nproc
+
+# detail
+lscpu

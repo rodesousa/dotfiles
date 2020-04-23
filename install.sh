@@ -24,6 +24,7 @@ sudo apt-get install -y \
   gimp
 
 pip2 install thefuck
+pip3 install thefuck
 
 sudo snap install postman
 sudo snap install kubectl --classic
