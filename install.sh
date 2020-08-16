@@ -18,10 +18,11 @@ sudo apt-get install -y \
 	python-dev python-pip python-setuptools \
 	tree curl fzf tig silversearcher-ag \
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
-	elixir inotify-tools exuberant-ctags terminator thefuck \
+	elixir inotify-tools exuberant-ctags terminator thefuck erlang \
   ruby-full gem jq \
   docker-ce docker-ce-cli containerd.io \
-  gimp
+  gimp \
+  nodejs npm
 
 pip2 install thefuck
 pip3 install thefuck
@@ -30,7 +31,6 @@ sudo snap install postman
 sudo snap install kubectl --classic
 sudo snap install helm --classic
 sudo snap install go --classic
-sudo snap install node --edge --classic
 
 sudo npm install diff-so-fancy -g
 

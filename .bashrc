@@ -118,6 +118,7 @@ fi
 
 source ~/.config/bashrc/alias
 
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # The next line updates PATH for the Google Cloud SDK.
