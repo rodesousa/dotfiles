@@ -11,25 +11,31 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
+sudo add-apt-repository ppa:neovim-ppa/stable
+
 sudo apt update
 
 sudo apt-get install -y \
 	python3-dev python3-pip python3-setuptools \
 	python-dev python-pip python-setuptools \
-	tree curl fzf tig silversearcher-ag \
+	tree curl fzf fd-find tig silversearcher-ag \
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
 	elixir inotify-tools exuberant-ctags terminator thefuck erlang \
   ruby-full gem jq \
   docker-ce docker-ce-cli containerd.io \
   gimp \
-  nodejs npm
+  npm
+
+sudo npm install -g npm
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
 
 pip2 install thefuck
 pip3 install thefuck
 
 sudo snap install postman
 sudo snap install kubectl --classic
-sudo snap install helm --classic
 sudo snap install go --classic
 
 sudo npm install diff-so-fancy -g
