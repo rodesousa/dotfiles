@@ -1,10 +1,7 @@
 filetype plugin indent on
 
-""" Vim-Plug
-
-if filereadable(expand("~/.config/nvim/plug.vim"))
-  source ~/.config/nvim/plug.vim
-endif
+source ~/.config/nvim/plug.vim
+source ~/.config/nvim/plug-config/coc.vim
 
 " color
 colorscheme abstract
@@ -19,12 +16,16 @@ set nocompatible
 set number
 set title
 
+" TextEdit might fail if hidden is not set.
+set hidden
+set cmdheight=2
+set updatetime=300
+
 "" Searching
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-"set list
 set expandtab
 
 " Generally configure tabs to 2, and convert to spaces
@@ -47,84 +48,19 @@ set fileencodings=utf-8
 set nobomb
 setlocal nobomb
 
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
 
 " Map leader to ,
 let mapleader=','
 au FileType elixir let $MIX_ENV = 'test'
-" LSP
-"let g:LanguageClient_autoStart = 1
-"let g:LanguageClient_serverCommands = {}
-"let g:LanguageClient_serverCommands.go = ['go-langserver', '-gocodecompletion']
-""let g:LanguageClient_serverCommands.go = ['gopls']
-"" go get -u golang.org/x/tools/cmd/gopls
-""let g:LanguageClient_serverCommands.elixir = ['language_server.sh']
-"" git clone git@github.com:JakeBecker/elixir-ls.git ~/.elixir_ls
-"" cd ~/.elixir_ls
-"" mix deps.get && mix compile
-"" mix elixir_ls.release - .
-"" add it to the $PATH
-"let g:LanguageClient_serverCommands['javascript'] = ['javascript-typescript-stdio']
-"let g:LanguageClient_serverCommands['typescript'] = ['javascript-typescript-stdio']
-"let g:LanguageClient_serverCommands['javascript.jsx'] = ['javascript-typescript-stdio']
-"" yarn global add javascript-typescript-langserver   -or-
-"" npm i -g javascript-typescript-langserver
-"let g:LanguageClient_serverCommands.reason = ['ocaml-language-server', '--stdio']
-"let g:LanguageClient_serverCommands.ocaml = ['ocaml-language-server', '--stdio']
-"" opam init
-" opam install merlin
-" opam user-setup install
-" yarn global add ocaml-language-server   -or-
-" npm i -g ocaml-language-server
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-
-" git color
-highlight GitGutterAdd    ctermfg=121 ctermbg=121
-highlight GitGutterChange ctermfg=74 ctermbg=74
-highlight GitGutterDelete ctermfg=167 ctermbg=167
-
-"" vim-go
-"let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_fmt_command = "goimports" "auto add/remove import
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_generate_tags = 1
-let g:go_highlight_space_tab_error = 0
-let g:go_highlight_array_whitespace_error = 0
-let g:go_highlight_trailing_whitespace_error = 0
-let g:go_highlight_extra_types = 1
-let g:go_code_completion_enabled = 0
-let g:go_metalinter_autosave = 0 " autolint when save
-
-" elixir
-let g:alchemist_tag_map = '<Leader> et'
-let g:alchemist_tag_stack_map = '<Leader> es'
-let g:mix_format_on_save = 1
-let g:mix_format_options = '--check-equivalent'
-"let g:alchemist_tag_disable = 1
-
-" gist
-let g:gist_show_privates = 1
+hi Search cterm=NONE ctermfg=white ctermbg=red
 
 """ Shortcurts
-
 if filereadable(expand("~/.config/nvim/shortcut.vim"))
   source ~/.config/nvim/shortcut.vim
 endif
-
-" vim-guntentags
-let g:gutentags_cache_dir = '~/.tags_cache'
-
-" tags
-let g:fzf_tags_command = 'ctags -R'
-
-hi Search cterm=NONE ctermfg=white ctermbg=red
 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep('rg --column --no-heading --line-number --color=always '.shellescape(<q-args>),
@@ -132,36 +68,44 @@ command! -bang -nargs=* Rg
   \ fzf#vim#with_preview(),
   \ <bang>0)
 
-
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
 
-" neomake
-let g:neomake_elixir_dialyzer_maker = {
-    \ 'exe': 'mix',
-    \ 'args': ['dialyzer'],
-    \ 'append_file': 0
-\ }
-let g:neomake_elixir_enabled_makers = ['credo', 'mix', 'dogma', 'elixir', "dialyzer"]
-"autocmd! BufReadPost,BufWritePost * Neomake
-"let g:neomake_open_list = 2
-
-" ale
-"let g:ale_elixir_elixir_ls_release='/home/rodesousa/git/elixir-ls/rel'
-"let g:ale_linters = {
-"      \   'elixir': ['credo', 'dialyxir']
-"      \}
-"let g:ale_lint_on_save = 1
-"let g:ale_open_list = 1
-"augroup CloseLoclistWindowGroup
-   "autocmd!
-   "autocmd QuitPre * if empty(&buftype) | lclose | endif
-"augroup END
-
 """ Vim-Plug
 if filereadable(expand("~/.config/nvim/abb.vim"))
   source ~/.config/nvim/abb.vim
 endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+

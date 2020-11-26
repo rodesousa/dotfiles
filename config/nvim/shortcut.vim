@@ -1,6 +1,7 @@
 " NERD
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
+nmap <leader><F3> :NERDTreeFind<CR>
 " Shift+i show hide files
 
 " terminal
@@ -49,38 +50,24 @@ nmap d< viwc<<C-r>"><Esc>
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 
 " vim-elixir
-autocmd FileType elixir nmap <C-b> :ExDef<CR>
+"autocmd FileType elixir nmap <C-b> :ExDef<CR>
 autocmd FileType elixir nmap <Leader>el :Neomake elixir<CR>
 
 " gundo
 noremap <F4> :GundoToggle<CR>
 
 " git
-noremap <Leader>d :Gdiffsplit<CR>
+noremap <Leader><space>g :Git<CR>
+noremap <Leader><space>d :Gdiffsplit<CR>
+noremap <Leader><space>a :Gwrite<CR>
+noremap <Leader><space>c :Git commit<CR>
+noremap <Leader><space>m :Git commit --amend<CR>
 
 " search
 noremap <Leader>f :Rg<CR>
 
 " ctags
 nmap <F6> :TagbarToggle<CR>
-
-" coc
-" Remap keys for gotos
-"nmap <silent> gd <Plug>(coc-definition)
-"nmap <silent> gy <Plug>(coc-type-definition)
-"nmap <silent> gi <Plug>(coc-implementation)
-"nmap <silent> gr <Plug>(coc-references)
-
-"" Use K to show documentation in preview window
-"nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-"function! s:show_documentation()
-  "if (index(['vim','help'], &filetype) >= 0)
-    "execute 'h '.expand('<cword>')
-  "else
-    "call CocAction('doHover')
-  "endif
-"endfunction
 
 " helper
 " CTRL-O previous location
@@ -93,7 +80,3 @@ nmap <F6> :TagbarToggle<CR>
 " gist
 " :Gist -l -> gist list
 "
-
-" Elixir
-" K for doc
-" CTRl-b go to

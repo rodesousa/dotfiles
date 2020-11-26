@@ -1,15 +1,22 @@
-autocmd FileType elixir iabbrev spec @spec name(String.t()) :: String.t()
+" FOR ELIXIR
+iabbrev spec @spec name(String.t()) :: String.t()
 
-abbrev mm {{ }}<LEFT><LEFT><LEFT>
-abbrev edoc @doc """
+iabbrev edoc @doc """
       \<CR>
       \<CR>"""<UP> 
 
 
-abbrev emdoc @moduledoc """
+iabbrev emdoc @moduledoc """
       \<CR>
       \<CR>"""<UP> 
 
-abbrev etag @tag :aze # mix test --only aze
-abbrev eput Map.put(
-abbrev insp \|> IO.inspect()
+iabbrev etag @tag :aze # mix test --only aze
+
+iabbrev eput Map.put(
+
+iabbrev insp \|> IO.inspect()
+
+iabbrev eii <%= %><LEFT><LEFT><LEFT>
+
+" FOR ALL
+iabbrev mm {{ }}<LEFT><LEFT><LEFT>

@@ -11,10 +11,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "" deoplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 "" cursors
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 "" Syntax highlighting
 Plug 'sheerun/vim-polyglot'         " Languages support.
@@ -22,10 +22,6 @@ Plug 'sheerun/vim-polyglot'         " Languages support.
 "" snipet
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-  
-"""" Add :Gist commands
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
   
 "" Git
 Plug 'tpope/vim-fugitive'
@@ -36,9 +32,9 @@ Plug 'mattn/gist-vim'
 "" Elixir formatting
 Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 Plug 'elixir-editors/vim-elixir'
-Plug 'c-brenn/phoenix.vim'
+"Plug 'c-brenn/phoenix.vim'
 Plug 'tpope/vim-projectionist'
-Plug 'slashmili/alchemist.vim'
+"Plug 'slashmili/alchemist.vim'
 
 "" rust
 Plug 'rust-lang/rust.vim'
@@ -71,6 +67,6 @@ Plug 'tpope/vim-surround'
 
 Plug 'rhysd/vim-fixjson'
 
-"Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
