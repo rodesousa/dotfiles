@@ -8,9 +8,7 @@ let g:coc_global_extensions = [
       \ 'coc-prettier',
       \ 'coc-json',
       \ 'coc-elixir',
-      \ 'coc-yank'
       \ ]
-      "\ 'coc-explorer',
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -53,7 +51,7 @@ endif
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent><leader>n <Plug>(coc-diagnostic-prev)
+nmap <silent><leader>m <Plug>(coc-diagnostic-prev)
 nmap <silent><leader>p <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.

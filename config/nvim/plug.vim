@@ -16,9 +16,6 @@ Plug 'junegunn/fzf.vim'
 "" cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-"" Syntax highlighting
-Plug 'sheerun/vim-polyglot'         " Languages support.
-
 "" snipet
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
@@ -26,47 +23,26 @@ Plug 'SirVer/ultisnips'
 "" Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
-
-"" Elixir formatting
-Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
-Plug 'elixir-editors/vim-elixir'
-"Plug 'c-brenn/phoenix.vim'
-Plug 'tpope/vim-projectionist'
-"Plug 'slashmili/alchemist.vim'
-
-"" rust
-Plug 'rust-lang/rust.vim'
 
 "" airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-""Go
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
-
-"" split block or joined
-Plug 'AndrewRadev/splitjoin.vim'
-
-""" python
-Plug 'zchee/deoplete-jedi'
-
 "" color
 Plug 'jdsimcoe/abstract.vim'
 
-Plug 'neomake/neomake'
-
-"Plug 'ludovicchabant/vim-gutentags'
-
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 
-Plug 'majutsushi/tagbar'
-
-Plug 'tpope/vim-surround'
-
-Plug 'rhysd/vim-fixjson'
-
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Elixir
+"Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
+Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
+
+"" Syntax highlighting
+Plug 'sheerun/vim-polyglot'         " Languages support.
+
+Plug 'neomake/neomake'
 
 call plug#end()
