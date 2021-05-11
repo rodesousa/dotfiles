@@ -33,7 +33,12 @@ Plug 'jdsimcoe/abstract.vim'
 
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 
+" coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"" rust
+Plug 'neoclide/coc-rls' 
+Plug 'fannheyward/coc-rust-analyzer' 
 
 " Elixir
 "Plug 'elixir-editors/vim-elixir'
