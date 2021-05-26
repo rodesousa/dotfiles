@@ -1,5 +1,6 @@
 {
+  "elixirLS.mixEnv": "dev",
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "elixirLS.dialyzerEnabled": false,
-  "coc.preferences.formatOnSaveFiletypes": ["rust"]
+  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "golang"]
 }
