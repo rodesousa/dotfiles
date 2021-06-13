@@ -5,7 +5,6 @@ packages:
 .PHONY: init
 init:
 	@sudo apt update
-	@sudo apt install git -y
 	@mkdir $(HOME)/bin
 
 .PHONY: config
@@ -28,11 +27,6 @@ neovim:
 	@sudo gem install neovim 
 	@sudo npm install -g neovim
 
-.PHONY: golang
-golang:
-	@mkdir $(HOME)/go
-	@sudo apt-get install go-dep -y
-
 COMPDIR=$(pkg-config --variable=completionsdir bash-completion)
 .PHONY: k8s
 k8s:
@@ -42,3 +36,9 @@ k8s:
 
 pandoc:
 	@firefox https://pandoc.org/installing.html
+
+elixir:
+	@git clone https://github.com/elixir-lsp/elixir-ls.git ~/.elixir-ls
+	@wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
+	@sudo apt update
+	@sudo apt install esl-erlang elixir -y

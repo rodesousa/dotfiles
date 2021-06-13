@@ -1,38 +1,41 @@
 # dotfiles
 
-- install git
+## install bin/
 
 ```
 make init
 ```
 
-- run packages
+## run packages
 
 ```
 make packages
 ```
 
-- run neovim
+## neovim
 
 ```
 make neovim
 ```
 
-- run config
+Open neovim and do :PlugInstall
+
+## run config
 
 ```
 CURDIR=`pwd` make config
 ```
 
-- run golang
-
-```
-make golang
-```
-
-- run k8s
+## run k8s
 
 ```
 make k8s
 ```
 
+## elixir
+
+```
+make elixir
+cd ~/.elixir-ls
+mix deps.get && mix compile && mix elixir_ls.release -o release
+```

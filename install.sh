@@ -17,8 +17,7 @@ sudo apt update
 
 sudo apt-get install -y \
 	python3-dev python3-pip python3-setuptools \
-	python-dev python-pip python-setuptools \
-	tree curl fzf fd-find tig silversearcher-ag \
+	tree fzf fd-find tig silversearcher-ag \
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
 	elixir inotify-tools exuberant-ctags terminator thefuck erlang \
   ruby-full gem jq \
@@ -48,4 +47,3 @@ sudo chmod 666 /var/run/docker.sock
 # config git
 git config --global user.email "dessroberto.gmail.com"
 git config --global user.name "Roberto De Sousa"
-
