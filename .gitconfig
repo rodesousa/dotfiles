@@ -29,6 +29,8 @@
   path = ~/.config/git/thales
 [includeIf "gitdir:~/git/pandascore/"]
   path = ~/.config/git/pandascore
+[includeIf "gitdir:~/git/arkhn/"]
+  path = ~/.config/git/arkhn
 
 [github]
 	user = rodesousa

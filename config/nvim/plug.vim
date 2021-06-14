@@ -35,6 +35,7 @@ Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
 
 "" rust
 Plug 'neoclide/coc-rls' 
