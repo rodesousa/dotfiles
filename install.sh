@@ -36,7 +36,8 @@ sudo snap install postman
 sudo snap install kubectl --classic
 sudo snap install go --classic
 
-sudo npm install diff-so-fancy -g
+#nvim
+sudo apt  install ripgrep
 
 # docker
 sudo addgroup --system docker
@@ -45,5 +46,6 @@ newgrp docker
 sudo chmod 666 /var/run/docker.sock
 
 # config git
+sudo npm install diff-so-fancy -g
 git config --global user.email "dessroberto.gmail.com"
 git config --global user.name "Roberto De Sousa"
