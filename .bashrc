@@ -120,6 +120,7 @@ source ~/.config/bashrc/alias
 
 alias fd=fdfind
 export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -130,3 +131,4 @@ if [ -f '/home/rodesousa/google-cloud-sdk/completion.bash.inc' ]; then . '/home/
 
 . "$HOME/.cargo/env"
 eval "$(thefuck --alias)"
+export PATH=$PATH:/home/rodesousa/.mix/escripts
