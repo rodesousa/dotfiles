@@ -24,9 +24,6 @@ map <C-Right> :vertical resize +1<CR>
 map <C-Up> :resize -1<CR>
 map <C-Down> :resize +1<CR>
 
-" fzf
-map <C-P> :Files<CR>
-map <Leader>b :Buffers<CR>
 
 " add symbols
 vmap d' c'<C-r>"'
@@ -56,12 +53,6 @@ autocmd FileType elixir nmap <Leader>el :Neomake elixir<CR>
 " gundo
 noremap <F4> :GundoToggle<CR>
 
-" git
-noremap <Leader><space>g :Git<CR>
-noremap <Leader><space>d :Gdiffsplit<CR>
-noremap <Leader><space>a :Gwrite<CR>
-noremap <Leader><space>c :Git commit<CR>
-noremap <Leader><space>m :Git commit --amend<CR>
 
 " search
 noremap <Leader>f :Rg<CR>

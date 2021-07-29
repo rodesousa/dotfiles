@@ -23,6 +23,7 @@ Plug 'SirVer/ultisnips'
 "" Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'rhysd/git-messenger.vim'
 
 "" airline
 Plug 'vim-airline/vim-airline'

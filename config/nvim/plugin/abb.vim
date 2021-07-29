@@ -1,5 +1,5 @@
 " FOR ELIXIR
-iabbrev spec @spec name(String.t()) :: String.t()
+iabbrev espec @spec name(String.t()) :: String.t()
 
 iabbrev edoc @doc """
       \<CR>
