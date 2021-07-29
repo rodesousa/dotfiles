@@ -34,3 +34,7 @@
 
 [github]
 	user = rodesousa
+[rerere]
+	enabled = true
+[log]
+	follow = true
