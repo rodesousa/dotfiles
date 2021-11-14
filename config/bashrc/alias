@@ -81,7 +81,6 @@ export PATH=$PATH:$GOPATH/bin
 #export GO111MODULE=on
 
 # k8s
-source <(helm completion bash)
 source <(kubectl completion bash)
 alias k8s="cat ~/.k8s"
 alias kgp="kubectl get pods"
@@ -95,5 +94,7 @@ alias kl="kubectl logs"
 #helper
 alias helpers="l ~/.config/helper/"
 alias helper_cpu="cat ~/.config/helper/cpu"
+
+alias memo="vi ~/git/memo"
 
 PATH=$PATH:/home/rdesousa/bin
