@@ -43,8 +43,8 @@ Plug 'neoclide/coc-rls'
 Plug 'fannheyward/coc-rust-analyzer' 
 
 " Elixir
-Plug 'elixir-editors/vim-elixir'
-Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
+"Plug 'elixir-editors/vim-elixir'
+"Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
 Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 "" Syntax highlighting

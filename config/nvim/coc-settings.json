@@ -1,7 +1,8 @@
 {
   "elixirLS.mixEnv": "dev",
+  "elixirLS.elixir.": ["elixir", "eelixir"],
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "elixirLS.dialyzerEnabled": false,
-  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "golang", "java"],
+  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "golang", "java", "elixir"],
   "java.home": "/usr/lib/jvm/java-11-openjdk-amd64"
 }
