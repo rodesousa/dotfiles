@@ -42,6 +42,7 @@ vmap d` c`<C-r>"`
 nmap d` viwc`<C-r>"`<Esc>
 vmap d< c<<C-r>">
 nmap d< viwc<<C-r>"><Esc>
+nmap d# viwc"#{<C-r>"}"<Esc>
 
 " vim-go
 autocmd FileType go nmap <Leader>i <Plug>(go-info)

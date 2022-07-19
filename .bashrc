@@ -129,6 +129,6 @@ if [ -f '/home/rodesousa/google-cloud-sdk/path.bash.inc' ]; then . '/home/rodeso
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/rodesousa/google-cloud-sdk/completion.bash.inc' ]; then . '/home/rodesousa/google-cloud-sdk/completion.bash.inc'; fi
 
-. "$HOME/.cargo/env"
 eval "$(thefuck --alias)"
 export PATH=$PATH:/home/rodesousa/.mix/escripts
+export PATH="/home/rodesousa/.local/share/solana/install/active_release/bin:$PATH"

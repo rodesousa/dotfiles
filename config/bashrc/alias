@@ -96,5 +96,10 @@ alias helpers="l ~/.config/helper/"
 alias helper_cpu="cat ~/.config/helper/cpu"
 
 alias memo="vi ~/git/memo"
+alias tailwind="vi ~/git/memo/tailwind.md"
+alias dcompose='docker run -it --rm --mount type=bind,source="$(pwd)",target=/compose  --mount type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock  --workdir=/compose docker/compose'
+alias rapport="vi ~/git/arkhn/rapport_fin.md"
+
+alias gitmsg="firefox https://buzut.net/cours/versioning-avec-git/bien-nommer-ses-commits"
 
 PATH=$PATH:/home/rdesousa/bin

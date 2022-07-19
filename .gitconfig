@@ -18,9 +18,10 @@
   aa = add -A
   pr = pull --rebase
   p = push
+  pf = push -f
   au = add -u
   ce = config --global -e
-  auto-rebase = "!git pull --rebase && git rebase origin/master"
+  rs = restore --staged
 [includeIf "gitdir:~/git/ritmx/"]
   path = ~/.config/git/ritmx
 [includeIf "gitdir:~/git/thales/"]
@@ -31,6 +32,8 @@
   path = ~/.config/git/pandascore
 [includeIf "gitdir:~/git/arkhn/"]
   path = ~/.config/git/arkhn
+[includeIf "gitdir:~/git/sapiologie/"]
+  path = ~/.config/git/sapiologie
 
 [github]
 	user = rodesousa

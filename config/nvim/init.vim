@@ -4,6 +4,9 @@ source ~/.config/nvim/plug.vim
 
 " color
 colorscheme abstract
+" colorscheme delek
+"set background=light
+"colorscheme PaperColor
 hi Search cterm=NONE ctermfg=white ctermbg=red
 
 "" Remember cursor position

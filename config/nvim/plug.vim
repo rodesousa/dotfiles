@@ -31,25 +31,28 @@ Plug 'vim-airline/vim-airline-themes'
 
 "" color
 Plug 'jdsimcoe/abstract.vim'
+Plug 'sainnhe/everforest'
 
 Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
 
 " coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
-
-"" rust
 Plug 'neoclide/coc-rls' 
 Plug 'fannheyward/coc-rust-analyzer' 
+Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 " Elixir
-"Plug 'elixir-editors/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
 "Plug 'mhinz/vim-mix-format', { 'for': 'elixir' }
-Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 "" Syntax highlighting
 Plug 'sheerun/vim-polyglot'         " Languages support.
 
 Plug 'neomake/neomake'
+
+Plug 'NLKNguyen/papercolor-theme'
+
+Plug 'vim-test/vim-test'
 
 call plug#end()

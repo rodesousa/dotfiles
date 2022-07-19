@@ -4,9 +4,9 @@ highlight GitGutterChange ctermfg=74 ctermbg=74
 highlight GitGutterDelete ctermfg=167 ctermbg=167
 
 " Fugitive Conflict Resolution
-nnoremap <leader>gd :Gvdiff<CR>
-nnoremap gdh :diffget //2<CR>
-nnoremap gdl :diffget //3<CR>
+nnoremap <leader>gd :Gvdiffsplit!<CR>
+nnoremap gdl :diffget //2<CR>
+nnoremap gdr :diffget //3<CR>
 
 " git
 noremap <Leader><space>g :Git<CR>

@@ -1,8 +1,13 @@
 {
+  "codeLens.enable": true,
   "elixirLS.mixEnv": "dev",
-  "elixirLS.elixir.": ["elixir", "eelixir"],
-  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "elixirLS.dialyzerEnabled": false,
-  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "golang", "java", "elixir"],
-  "java.home": "/usr/lib/jvm/java-11-openjdk-amd64"
+  "languageserver": {
+    "elixirLS": {
+      "command": "~/.elixir-ls/language_server.sh",
+      "filetypes": ["elixir", "eelixir"]
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "golang", "java", "elixir", "ts", "typescript"],
+  "typescript.referencesCodeLens.enable": false
 }
