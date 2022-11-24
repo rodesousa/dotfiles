@@ -22,6 +22,9 @@
   au = add -u
   ce = config --global -e
   rs = restore --staged
+  r = reset --soft
+  rr = reset --mixed
+  rrr = reset --hard
 [includeIf "gitdir:~/git/ritmx/"]
   path = ~/.config/git/ritmx
 [includeIf "gitdir:~/git/thales/"]

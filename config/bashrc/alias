@@ -103,3 +103,5 @@ alias rapport="vi ~/git/arkhn/rapport_fin.md"
 alias gitmsg="firefox https://buzut.net/cours/versioning-avec-git/bien-nommer-ses-commits"
 
 PATH=$PATH:/home/rdesousa/bin
+
+alias vimconf="nvim ~/.config/nvim"
