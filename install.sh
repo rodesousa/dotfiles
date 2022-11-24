@@ -1,8 +1,23 @@
 #! /usr/bin/bash
 
+echo "install python"
+sudo apt-get install -y	python3-dev python3-pip python3-setuptools
+
+echo "install common tools"
+sudo apt-get install -y	tree fzf fd-find tig silversearcher-ag
+	apt-transport-https ca-certificates gnupg-agent software-properties-common \
+	inotify-tools thefuck jq gimp npm
+
+pip3 install thefuck
+
+echo "install asdf"
+
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+
+echo "install docker"
+
 sudo apt-get remove docker docker-engine docker.io containerd runc
 
-sudo apt install curl -y
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
@@ -11,41 +26,22 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
-sudo add-apt-repository ppa:neovim-ppa/stable
-
 sudo apt update
 
-sudo apt-get install -y \
-	python3-dev python3-pip python3-setuptools \
-	tree fzf fd-find tig silversearcher-ag \
-	apt-transport-https ca-certificates gnupg-agent software-properties-common \
-	elixir inotify-tools exuberant-ctags terminator thefuck erlang \
-  ruby-full gem jq \
-  docker-ce docker-ce-cli containerd.io \
-  gimp \
-  npm
+sudo apt install -y docker-ce docker-ce-cli containerd.io \
 
-sudo npm install -g npm
-sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-
-pip3 install thefuck
-
-sudo snap install postman
-sudo snap install kubectl --classic
-sudo snap install go --classic
-
-#nvim
-sudo apt  install ripgrep
-
-# docker
 sudo addgroup --system docker
 sudo adduser $USER docker
 newgrp docker
 sudo chmod 666 /var/run/docker.sock
 
-# config git
-sudo npm install diff-so-fancy -g
+echo "install npm"
+#sudo npm install -g npm
+#sudo npm cache clean -f
+#sudo npm install -g n
+#sudo n stable
+#sudo npm install diff-so-fancy -g
+
+echo "git config"
 git config --global user.email "dessroberto.gmail.com"
 git config --global user.name "Roberto De Sousa"

@@ -5,7 +5,8 @@ packages:
 .PHONY: init
 init:
 	@sudo apt update
-	@mkdir $(HOME)/bin
+	@mkdir $(HOME)/bin -p
+	@sudo apt install -y curl git make terminator
 
 .PHONY: config
 config:
@@ -19,6 +20,7 @@ config:
 
 .PHONY: neovim
 neovim:
+	@sudo add-apt-repository ppa:neovim-ppa/stable
 	@curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@pip install pynvim --upgrade
 	@pip3 install pynvim --upgrade
@@ -26,6 +28,7 @@ neovim:
 	# doesnt work
 	@sudo gem install neovim 
 	@sudo npm install -g neovim
+	@sudo apt install ripgrep
 
 COMPDIR=$(pkg-config --variable=completionsdir bash-completion)
 .PHONY: k8s
@@ -38,7 +41,16 @@ pandoc:
 	@firefox https://pandoc.org/installing.html
 
 elixir:
-	@git clone https://github.com/elixir-lsp/elixir-ls.git ~/.elixir-ls
-	@wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb && sudo dpkg -i erlang-solutions_2.0_all.deb
+	@asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git 
+	@asdf gloabal elixir latest
+erlang:
+	@sudo wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
+	@sudo dpkg -i erlang-solutions_2.0_all.deb
 	@sudo apt update
-	@sudo apt install esl-erlang elixir -y
+	@sudo apt install esl-erlang -y
+
+all: init packages
+
+opt-25:
+	sudo apt install curl software-properties-common apt-transport-https lsb-release
+	curl -fsSL https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/erlang.gpg

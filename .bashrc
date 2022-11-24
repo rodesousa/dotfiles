@@ -132,3 +132,6 @@ if [ -f '/home/rodesousa/google-cloud-sdk/completion.bash.inc' ]; then . '/home/
 eval "$(thefuck --alias)"
 export PATH=$PATH:/home/rodesousa/.mix/escripts
 export PATH="/home/rodesousa/.local/share/solana/install/active_release/bin:$PATH"
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash

@@ -1,22 +1,10 @@
 # dotfiles
 
-## install bin/
+all or 
 
-```
-make init
-```
-
-## run packages
-
-```
-make packages
-```
-
-## neovim
-
-```
-make neovim
-```
+- `make init`
+- `make packages`
+- `make neovim`
 
 Open neovim and do :PlugInstall
 
@@ -24,12 +12,6 @@ Open neovim and do :PlugInstall
 
 ```
 CURDIR=`pwd` make config
-```
-
-## run k8s
-
-```
-make k8s
 ```
 
 ## elixir
