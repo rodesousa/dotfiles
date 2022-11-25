@@ -14,3 +14,7 @@ noremap <Leader><space>d :Gdiffsplit<CR>
 noremap <Leader><space>a :Gwrite<CR>
 noremap <Leader><space>c :Git commit<CR>
 noremap <Leader><space>m :Git commit --amend<CR>
+
+" gist
+" :Gist -l -> gist list
+"

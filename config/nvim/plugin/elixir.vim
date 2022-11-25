@@ -1,12 +1,12 @@
 " JUST FOR ELIXIR
 iabbrev espec @spec name(String.t()) :: String.t()
 
-iabbrev eedoc @doc """
+iabbrev EDOC @doc """
       \<CR>
       \<CR>"""<UP> 
 
 
-iabbrev eemdoc @moduledoc """
+iabbrev EMDOC @moduledoc """
       \<CR>
       \<CR>"""<UP> 
 
@@ -14,7 +14,7 @@ iabbrev etag @tag :aze # mix test --only aze
 
 iabbrev eput Map.put(
 
-"iabbrev insp \|> IO.inspect(label: "")<LEFT><LEFT>
+iabbrev insp \|> IO.inspect(label: "")<LEFT><LEFT>
 iabbrev ethen \|> then(fn arg ->end)<LEFT><LEFT><LEFT><LEFT>
 iabbrev egettext <%= gettext() %><LEFT><LEFT><LEFT><LEFT>
 
@@ -44,3 +44,22 @@ iabbrev ENum Enum
 iabbrev ENUm Enum
 
 iabbrev MAp Map
+
+iabbrev font300 font-light
+iabbrev font400 font-normal
+iabbrev font500 font-medium
+iabbrev font600 font-semibold
+iabbrev font700 font-bold
+iabbrev font800 font-extrabold
+iabbrev font900 font-black
+
+iabbrev size12 text-xs
+iabbrev size14 text-sm
+iabbrev size16 text-base
+iabbrev size18 text-lg
+iabbrev size20 text-xl
+iabbrev size24 text-2xl
+iabbrev size36 text-4xl
+
+iabbrev secondaryblack sapio-black-700
+iabbrev colorbluegreen sapio-bluegreen-500

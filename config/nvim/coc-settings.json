@@ -1,13 +1,15 @@
 {
   "codeLens.enable": true,
   "elixirLS.mixEnv": "dev",
+  "elixirLS.mixTarget": "test",
   "elixirLS.dialyzerEnabled": false,
   "languageserver": {
     "elixirLS": {
-      "command": "~/.elixir-ls/language_server.sh",
+      "command": "/home/rodesousa/.elixir-ls/release/language_server.sh",
       "filetypes": ["elixir", "eelixir"]
     }
   },
-  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "golang", "java", "elixir", "ts", "typescript"],
+  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "golang", "java", "elixir", "eelixir", "ts", "typescript"],
   "typescript.referencesCodeLens.enable": false
 }
+

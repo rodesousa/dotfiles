@@ -3,7 +3,7 @@ filetype plugin indent on
 source ~/.config/nvim/plug.vim
 
 " color
-colorscheme abstract
+"colorscheme abstract
 " colorscheme delek
 "set background=light
 "colorscheme PaperColor
@@ -59,3 +59,28 @@ set clipboard=unnamedplus
 
 " Map leader to ,
 let mapleader=','
+
+"""""" TEEEEEST
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
