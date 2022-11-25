@@ -42,15 +42,23 @@ pandoc:
 
 elixir:
 	@asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git 
-	@asdf gloabal elixir latest
+	@asdf install elixir latest
+	@asdf global elixir latest
+
 erlang:
+	xsltproc fop
+	@sudo apt-get -y install build-essential autoconf m4 libncurses5-dev libssh-dev xsltproc fop libncursesw5-dev
+	@asdf install erlang 25.1.2
+	@asdf global erlang 25.1.2
+
+old-erlang:
 	@sudo wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
 	@sudo dpkg -i erlang-solutions_2.0_all.deb
 	@sudo apt update
 	@sudo apt install esl-erlang -y
+	@echo "Checks if" 
+	@echo "deb http://binaries.erlang-solutions.com/debian focal contrib" 
+	@echo "exist in /etc/apt/sources.list.d/erlang-solutions.list" 
+	@echo "OTP 5"
 
-all: init packages
-
-opt-25:
-	sudo apt install curl software-properties-common apt-transport-https lsb-release
-	curl -fsSL https://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/erlang.gpg
+all: init packages neovim config pandoc erlang elixir
