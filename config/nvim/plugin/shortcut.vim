@@ -44,16 +44,9 @@ vmap d< c<<C-r>">
 nmap d< viwc<<C-r>"><Esc>
 nmap d# viwc"#{<C-r>"}"<Esc>
 
-" vim-go
-autocmd FileType go nmap <Leader>i <Plug>(go-info)
-
 " vim-elixir
 "autocmd FileType elixir nmap <C-b> :ExDef<CR>
 autocmd FileType elixir nmap <Leader>el :Neomake elixir<CR>
-
-" gundo
-noremap <F4> :GundoToggle<CR>
-
 
 " search
 noremap <Leader>f :Rg<CR>

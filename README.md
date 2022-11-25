@@ -13,9 +13,6 @@ Or:
 - `make pandoc`
 - `make erlang elixir`
 
-## Post installation
+## Teams with firefox
 
-- Open neovim and do :PlugInstall
-- cd ~/.elixir-ls
-- mix deps.get && mix compile && mix elixir_ls.release -o release
-```
+I haev to fake the user agent to Windows/Chrome

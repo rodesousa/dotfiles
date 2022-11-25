@@ -36,11 +36,15 @@ newgrp docker
 sudo chmod 666 /var/run/docker.sock
 
 echo "install npm"
-#sudo npm install -g npm
-#sudo npm cache clean -f
-#sudo npm install -g n
-#sudo n stable
-#sudo npm install diff-so-fancy -g
+mkdir $HOME/.n
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf install nodejs 14.17.0
+asdf global nodejs 14.17.0
+npm install -g npm
+npm cache clean -f
+npm install -g n
+n stable
+npm install diff-so-fancy -g
 
 echo "git config"
 git config --global user.email "dessroberto.gmail.com"
