@@ -9,6 +9,8 @@ source ~/.config/nvim/plug.vim
 "colorscheme PaperColor
 hi Search cterm=NONE ctermfg=white ctermbg=red
 
+set mouse=a
+
 "" Remember cursor position
 augroup vimrc-remember-cursor-position
   autocmd!

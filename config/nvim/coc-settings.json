@@ -3,13 +3,15 @@
   "elixirLS.mixEnv": "dev",
   "elixirLS.mixTarget": "test",
   "elixirLS.dialyzerEnabled": false,
+  "diagnostic.enableSign": true,
+    "diagnostic.checkCurrentLine": true,
   "languageserver": {
     "elixirLS": {
       "command": "/home/rodesousa/.elixir-ls/release/language_server.sh",
       "filetypes": ["elixir", "eelixir"]
     }
   },
-  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "golang", "java", "elixir", "eelixir", "ts", "typescript"],
+  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "golang", "java", "elixir", "eelixir", "ts", "typescript", "json"],
   "typescript.referencesCodeLens.enable": false
 }
 

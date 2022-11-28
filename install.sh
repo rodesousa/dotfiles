@@ -6,7 +6,7 @@ sudo apt-get install -y	python3-dev python3-pip python3-setuptools
 echo "install common tools"
 sudo apt-get install -y	tree fzf fd-find tig silversearcher-ag
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
-	inotify-tools thefuck jq gimp npm
+	inotify-tools thefuck jq gimp inotify-tools
 
 pip3 install thefuck
 
