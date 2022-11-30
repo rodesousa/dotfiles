@@ -13,6 +13,6 @@ Or:
 - `make pandoc`
 - `make erlang elixir`
 
-## Teams with firefox
+## Teams problem
 
-I haev to fake the user agent to Windows/Chrome
+https://askubuntu.com/questions/1195364/ubuntu-screen-sharing-on-google-chrome-not-working
