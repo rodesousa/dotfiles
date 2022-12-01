@@ -6,3 +6,6 @@ let g:neomake_elixir_dialyzer_maker = {
 \ }
 let g:neomake_elixir_enabled_makers = ['credo', 'mix', 'dogma', 'elixir', "dialyzer"]
 
+" vim-elixir
+"autocmd FileType elixir nmap <C-b> :ExDef<CR>
+autocmd FileType elixir nmap <Leader>el :Neomake elixir<CR>
