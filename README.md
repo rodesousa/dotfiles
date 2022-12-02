@@ -16,3 +16,7 @@ Or:
 ## Teams problem
 
 https://askubuntu.com/questions/1195364/ubuntu-screen-sharing-on-google-chrome-not-working
+
+## Air pod problems
+
+https://askubuntu.com/questions/1408647/unable-to-pair-airpods-pro-with-ubuntu-22-04
