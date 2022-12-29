@@ -8,8 +8,7 @@ alias ...='cd ../..'
 alias cdp='cd -P'
 alias datef='echo `date +%Y-%m-%d`'
 
-alias vi='nvim'
-#alias ni=nvim
+alias ni=nvim
 #alias psbt="sbt -Dhttp.proxyHost=proxy.le-figaro.com -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy.le-figaro.com -Dhttps.proxyPort=8080 -Dhttp.nonProxyHosts='localhost|127.0.0.1|leacv|leaoffres|keljob-search-api|dev.keljob.com|keljob-api|*.adencf.local'"
 
 #docker stop

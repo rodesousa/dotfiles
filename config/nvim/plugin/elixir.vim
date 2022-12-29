@@ -45,13 +45,13 @@ iabbrev ENUm Enum
 
 iabbrev MAp Map
 
-iabbrev font300 font-light
-iabbrev font400 font-normal
-iabbrev font500 font-medium
-iabbrev font600 font-semibold
-iabbrev font700 font-bold
-iabbrev font800 font-extrabold
-iabbrev font900 font-black
+iabbrev weight300 font-light
+iabbrev weight400 font-normal
+iabbrev weight500 font-medium
+iabbrev weight600 font-semibold
+iabbrev weight700 font-bold
+iabbrev weight800 font-extrabold
+iabbrev weight900 font-black
 
 iabbrev size12 text-xs
 iabbrev size14 text-sm

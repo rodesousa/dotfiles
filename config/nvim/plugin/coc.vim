@@ -5,6 +5,8 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+let g:coc_start_at_startup = 1
+
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
