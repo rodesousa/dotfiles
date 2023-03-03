@@ -61,6 +61,7 @@ set clipboard=unnamedplus
 
 " Map leader to ,
 let mapleader=','
+"let mapleader="\<Space>"
 
 """""" TEEEEEST
 

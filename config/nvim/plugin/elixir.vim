@@ -63,3 +63,4 @@ iabbrev size36 text-4xl
 
 iabbrev secondaryblack sapio-black-700
 iabbrev colorbluegreen sapio-bluegreen-500
+"autocmd BufWritePost *.html.heex !mix format <afile>

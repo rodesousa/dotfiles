@@ -104,3 +104,4 @@ alias gitmsg="firefox https://buzut.net/cours/versioning-avec-git/bien-nommer-se
 PATH=$PATH:/home/rdesousa/bin
 
 alias vimconf="nvim ~/.config/nvim"
+alias lv="lvim"

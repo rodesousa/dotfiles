@@ -7,9 +7,9 @@ endif
 "let g:sonokai_style = 'andromeda'
 "let g:sonokai_style = 'atlantis'
 "let g:sonokai_better_performance = 1
-"colorscheme sonokai
+colorscheme sonokai
 
 " ayu
 "let ayucolor="light"  " for light version of theme
-let ayucolor="mirage" " for mirage version of theme
-colorscheme ayu
+"let ayucolor="mirage" " for mirage version of theme
+"colorscheme ayu

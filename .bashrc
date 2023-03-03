@@ -136,3 +136,4 @@ export PATH="/home/rodesousa/.local/share/solana/install/active_release/bin:$PAT
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 export N_PREFIX=$HOME/.n
+. "$HOME/.cargo/env"

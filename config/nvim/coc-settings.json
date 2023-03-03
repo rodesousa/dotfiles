@@ -6,6 +6,17 @@
   "elixir.pathToElixirLS": "/home/rodesousa/.elixir-ls/release/language_server.sh",
   "diagnostic.enableSign": true,
   "diagnostic.checkCurrentLine": true,
-  "coc.preferences.formatOnSaveFiletypes": ["rust", "go", "golang", "java", "elixir", "eelixir", "ts", "typescript", "json"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "rust",
+    "go",
+    "golang",
+    "java",
+    "elixir",
+    "eelixir",
+    "ts",
+    "typescript",
+    "json"
+  ],
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSave": true
 }
-

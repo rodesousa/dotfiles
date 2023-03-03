@@ -1,5 +1,5 @@
 call plug#begin()
-
+red
 "" Nerdtree
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -10,7 +10,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-"" coc
+""" coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 Plug 'neoclide/coc-tsserver'
@@ -28,7 +28,7 @@ Plug 'SirVer/ultisnips'
 " test
 Plug 'vim-test/vim-test'
 
-"" Syntax highlighting
+""" Syntax highlighting
 Plug 'sheerun/vim-polyglot'         " Languages support.
 
 "" Git
@@ -42,10 +42,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 "" theme
 Plug 'sainnhe/sonokai'
-Plug 'ayu-theme/ayu-vim'
+"Plug 'ayu-theme/ayu-vim'
 Plug 'altercation/vim-colors-solarized'
 
-" indent lines
+"" indent lines
 Plug 'Yggdroot/indentLine'
 
 call plug#end()
