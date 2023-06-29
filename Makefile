@@ -52,19 +52,10 @@ coc-elixir-update:
 	@cd ~/.elixir-ls && mix deps.get && mix compile && mix elixir_ls.release -o release
 
 erlang:
+	@asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
 	@sudo apt-get -y install build-essential autoconf m4 libncurses5-dev libssh-dev xsltproc fop libncursesw5-dev
 	@asdf install erlang 25.1.2
 	@asdf global erlang 25.1.2
-
-old-erlang:
-	@sudo wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb
-	@sudo dpkg -i erlang-solutions_2.0_all.deb
-	@sudo apt update
-	@sudo apt install esl-erlang -y
-	@echo "Checks if" 
-	@echo "deb http://binaries.erlang-solutions.com/debian focal contrib" 
-	@echo "exist in /etc/apt/sources.list.d/erlang-solutions.list" 
-	@echo "OTP 5"
 
 all: init packages neovim config pandoc erlang elixir
 

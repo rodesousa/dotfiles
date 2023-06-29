@@ -137,3 +137,5 @@ source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 export N_PREFIX=$HOME/.n
 . "$HOME/.cargo/env"
+alias gitst='git st'
+alias touchdate='touch $(date +'%d_%m_%Y').md'
