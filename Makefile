@@ -7,6 +7,7 @@ init:
 	@sudo apt update
 	@mkdir $(HOME)/bin -p
 	@sudo apt install -y curl
+ 	@ssh-keygen -t ed25519 -C "dessroberto@gmail.com"
 
 .PHONY: config
 config:

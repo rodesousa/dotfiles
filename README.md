@@ -15,8 +15,9 @@ Or:
 
 ## Plus
 
-- https://doc.ubuntu-fr.org/google_chrome
-- https://askubuntu.com/questions/1428961/dell-xps-13-webcam-not-recognized-under-ubuntu-22-04-1
+- Install chrome: https://doc.ubuntu-fr.org/google_chrome
+- Camera problem: https://askubuntu.com/questions/1428961/dell-xps-13-webcam-not-recognized-under-ubuntu-22-04-1
+- Add ssh key in github
 
 ## Teams problem
 
