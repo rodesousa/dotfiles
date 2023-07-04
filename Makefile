@@ -6,15 +6,13 @@ packages:
 init:
 	@sudo apt update
 	@mkdir $(HOME)/bin -p
-	@sudo apt install -y curl git make terminator
+	@sudo apt install -y curl
 
 .PHONY: config
 config:
 	@ln -snf $(CURDIR)/config/bashrc $(HOME)/.config/bashrc
 	@ln -snf $(CURDIR)/.bashrc $(HOME)/.bashrc
 	@ln -snf $(CURDIR)/.gitconfig $(HOME)/.gitconfig
-	@ln -snf $(CURDIR)/config/nvim $(HOME)/.config/nvim
-	@ln -snf $(CURDIR)/config/terminator $(HOME)/.config
 	@ln -snf $(CURDIR)/config/git $(HOME)/.config/git
 	@ln -snf $(CURDIR)/config/helper $(HOME)/.config/helper
 

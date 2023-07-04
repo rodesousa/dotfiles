@@ -49,3 +49,9 @@ npm install diff-so-fancy -g
 echo "git config"
 git config --global user.email "dessroberto.gmail.com"
 git config --global user.name "Roberto De Sousa"
+
+echo "install tailscale"
+curl -fsSL https://tailscale.com/install.sh | sh
+
+echo "Kitty"
+apt install kitty -y
