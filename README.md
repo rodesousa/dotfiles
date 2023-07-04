@@ -18,6 +18,7 @@ Or:
 - Install chrome: https://doc.ubuntu-fr.org/google_chrome
 - Camera problem: https://askubuntu.com/questions/1428961/dell-xps-13-webcam-not-recognized-under-ubuntu-22-04-1
 - Add ssh key in github
+- Post install lunar: https://www.lunarvim.org/docs/installation/post-install#install-a-nerd-font
 
 ## Teams problem
 
