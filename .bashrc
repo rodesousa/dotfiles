@@ -133,9 +133,8 @@ if [ -f '/home/rodesousa/google-cloud-sdk/completion.bash.inc' ]; then . '/home/
 eval "$(thefuck --alias)"
 export PATH=$PATH:/home/rodesousa/.mix/escripts
 export PATH="/home/rodesousa/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="/home/rodesousa/.local/bin:$PATH"
 source $HOME/.asdf/asdf.sh
 source $HOME/.asdf/completions/asdf.bash
 export N_PREFIX=$HOME/.n
-. "$HOME/.cargo/env"
-alias gitst='git st'
 alias touchdate='touch $(date +'%d_%m_%Y').md'
