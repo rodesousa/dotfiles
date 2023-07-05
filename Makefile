@@ -7,7 +7,8 @@ init:
 	@sudo apt update
 	@mkdir $(HOME)/bin -p
 	@sudo apt install -y curl
- 	@ssh-keygen -t ed25519 -C "dessroberto@gmail.com"
+	@ssh-keygen -t ed25519 -C "dessroberto@gmail.com"
+
 
 .PHONY: config
 config:
@@ -15,6 +16,7 @@ config:
 	@ln -snf $(CURDIR)/.bashrc $(HOME)/.bashrc
 	@ln -snf $(CURDIR)/.gitconfig $(HOME)/.gitconfig
 	@ln -snf $(CURDIR)/config/git $(HOME)/.config/git
+	@ln -snf $(CURDIR)/config/terminator $(HOME)/.config
 	@ln -snf $(CURDIR)/config/helper $(HOME)/.config/helper
 
 .PHONY: neovim

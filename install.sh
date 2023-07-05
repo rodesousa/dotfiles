@@ -55,3 +55,6 @@ curl -fsSL https://tailscale.com/install.sh | sh
 
 echo "Kitty"
 apt install kitty -y
+
+echo "ripgrep"
+apt install ripgrep
