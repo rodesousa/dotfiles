@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 
 echo "install python"
-sudo apt-get install -y	python3-dev python3-pip python3-setuptools
+sudo apt-get install -y	python3-dev python3-pip python3-setuptools inotify-tools
 
 echo "install common tools"
 sudo apt-get install -y	tree fzf fd-find tig silversearcher-ag

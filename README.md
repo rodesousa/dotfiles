@@ -15,6 +15,7 @@ Or:
 
 ## Plus
 
+- Reload phoenix https://github.com/inotify-tools/inotify-tools/wiki
 - Install chrome: https://doc.ubuntu-fr.org/google_chrome
 - Camera problem: https://askubuntu.com/questions/1428961/dell-xps-13-webcam-not-recognized-under-ubuntu-22-04-1
 
@@ -36,3 +37,7 @@ https://askubuntu.com/questions/1195364/ubuntu-screen-sharing-on-google-chrome-n
 ## Air pod problems
 
 https://askubuntu.com/questions/1408647/unable-to-pair-airpods-pro-with-ubuntu-22-04
+
+## Lip problem
+
+- https://askubuntu.com/questions/1292489/dell-laptop-wont-suspend-when-lid-closed-ubuntu-20-04-1-lts
