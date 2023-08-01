@@ -139,3 +139,4 @@ source $HOME/.asdf/completions/asdf.bash
 export N_PREFIX=$HOME/.n
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 alias touchdate='touch $(date +'%d_%m_%Y').md'
+source /usr/share/doc/fzf/examples/key-bindings.bash
