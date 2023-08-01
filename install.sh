@@ -7,6 +7,7 @@ echo "install common tools"
 sudo apt-get install -y	tree fzf fd-find tig silversearcher-ag
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
 	inotify-tools thefuck jq gimp inotify-tools
+		
 
 echo "install thefuck"
 pip3 install thefuck
@@ -30,9 +31,17 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
-sudo apt update
+echo "add mozillavpn"
+sudo add-apt-repository ppa:mozillacorp/mozillavpn
 
-sudo apt install -y docker-ce docker-ce-cli containerd.io \
+echo "apt update"
+sudo apt-get update
+
+echo "install docker"
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+
+echo "install mozilla vpn"
+sudo apt-get install mozillavpn
 
 sudo addgroup --system docker
 sudo adduser $USER docker
@@ -65,3 +74,6 @@ apt install ripgrep
 
 echo "TS installation for lunar"
 npm install -g typescript-language-server typescript 
+
+
+
