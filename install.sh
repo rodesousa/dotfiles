@@ -1,14 +1,18 @@
 #! /usr/bin/bash
 
 echo "install python"
-sudo apt-get install -y	python3-dev python3-pip python3-setuptools inotify-tools
+sudo apt-get install -y	python3-dev python3-pip python3-setuptools inotify-tools bat
 
 echo "install common tools"
 sudo apt-get install -y	tree fzf fd-find tig silversearcher-ag
 	apt-transport-https ca-certificates gnupg-agent software-properties-common \
 	inotify-tools thefuck jq gimp inotify-tools
 
+echo "install thefuck"
 pip3 install thefuck
+
+echo "bat in loca/bin"
+ln -s /usr/bin/batcat ~/$HOME/bin/bat 
 
 echo "install asdf"
 
@@ -58,3 +62,6 @@ apt install kitty -y
 
 echo "ripgrep"
 apt install ripgrep
+
+echo "TS installation for lunar"
+npm install -g typescript-language-server typescript 
