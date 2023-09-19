@@ -2,13 +2,22 @@
 packages:
 	./install.sh
 
+ssh:
+	@ssh-keygen -t ed25519 -C "dessroberto@gmail.com"
+
 .PHONY: init
 init:
 	@sudo apt update
 	@mkdir $(HOME)/bin -p
 	@sudo apt install -y curl
-	@ssh-keygen -t ed25519 -C "dessroberto@gmail.com"
 
+terminator:
+	@sudo add-apt-repository ppa:gnome-terminator
+	@sudo apt-get update
+	@sudo apt-get install terminator -y
+
+asdf:
+	@git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 
 .PHONY: config
 config:
@@ -19,17 +28,28 @@ config:
 	@ln -snf $(CURDIR)/config/terminator $(HOME)/.config
 	@ln -snf $(CURDIR)/config/helper $(HOME)/.config/helper
 
+node:
+	@mkdir -p $HOME/.n
+	@asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+	@asdf install nodejs latest
+	@asdf global nodejs latest
+	@npm install -g npm
+	@npm cache clean -f
+	@npm install -g n
+	@n stable
+	@npm install diff-so-fancy -g
+	@npm install -g typescript-language-server typescript 
+
 .PHONY: neovim
 neovim:
-	@sudo add-apt-repository ppa:neovim-ppa/stable
-	@curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	@asdf plugin add neovim
+	@asdf install neovim latest
+	@asdf global neovim latest
 	@pip install pynvim --upgrade
 	@pip3 install pynvim --upgrade
-	@sudo apt install neovim -y
-	@sudo apt install ruby-rubygems ruby-dev -y
+	@sudo apt install ruby-dev -y
 	@sudo gem install neovim 
-	@sudo npm install -g neovim
-	@sudo apt install ripgrep
+	@npm install -g neovim
 
 COMPDIR=$(pkg-config --variable=completionsdir bash-completion)
 .PHONY: k8s
