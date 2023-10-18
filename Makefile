@@ -22,6 +22,7 @@ asdf:
 .PHONY: config
 config:
 	@ln -snf $(CURDIR)/config/bashrc $(HOME)/.config/bashrc
+	@ln -snf $(CURDIR)/config.lua $(HOME)/.config/lvim/config.lua
 	@ln -snf $(CURDIR)/.bashrc $(HOME)/.bashrc
 	@ln -snf $(CURDIR)/.gitconfig $(HOME)/.gitconfig
 	@ln -snf $(CURDIR)/config/git $(HOME)/.config/git

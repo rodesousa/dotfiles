@@ -8,6 +8,7 @@ an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
+lvim.builtin.project.manual_mode = true
 -- general
 lvim.log.level = "warn"
 -- lvim.format_on_save.enabled = false
@@ -58,21 +59,6 @@ vim.cmd('iabbrev e# #{}<LEFT>')
 vim.cmd('iabbrev eiex <SPACE><SPACE><SPACE><SPACE>iex>')
 vim.cmd('iabbrev e< \\|>')
 
-vim.cmd('iabbrev weight300 font-light')
-vim.cmd('iabbrev weight400 font-normal')
-vim.cmd('iabbrev weight500 font-medium')
-vim.cmd('iabbrev weight600 font-semibold')
-vim.cmd('iabbrev weight700 font-bold')
-vim.cmd('iabbrev weight800 font-extrabold')
-vim.cmd('iabbrev weight900 font-black')
-
-vim.cmd('iabbrev size12 text-xs')
-vim.cmd('iabbrev size14 text-sm')
-vim.cmd('iabbrev size16 text-base')
-vim.cmd('iabbrev size18 text-lg')
-vim.cmd('iabbrev size20 text-xl')
-vim.cmd('iabbrev size24 text-2xl')
-vim.cmd('iabbrev size36 text-4xl')
 vim.cmd('iabbrev ENum Enum')
 vim.cmd('iabbrev ENUm Enum')
 vim.cmd('iabbrev MAp Map')
@@ -369,8 +355,8 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 require('lspconfig').elixirls.setup({
-	cmd = { "/home/rodesousa/.elixir-ls-1.14.3/release/language_server.sh" },
-	-- cmd = { "/home/rodesousa/.elixir-ls/release/language_server.sh" },
+	-- cmd = { "/home/rodesousa/.elixir-ls-1.14.3/release/language_server.sh" },
+	cmd = { "/home/rodesousa/.elixir-ls/release/language_server.sh" },
 	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
