@@ -7,101 +7,20 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias cdp='cd -P'
 alias datef='echo `date +%Y-%m-%d`'
+alias gitmsg="firefox https://buzut.net/cours/versioning-avec-git/bien-nommer-ses-commits"
 
-alias ni=nvim
-#alias psbt="sbt -Dhttp.proxyHost=proxy.le-figaro.com -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy.le-figaro.com -Dhttps.proxyPort=8080 -Dhttp.nonProxyHosts='localhost|127.0.0.1|leacv|leaoffres|keljob-search-api|dev.keljob.com|keljob-api|*.adencf.local'"
+# UPDATE
+alias signal_update="sudo apt update && sudo apt install signal-desktop"
 
-#docker stop
-docker_stop(){
-    docker stop $(docker ps -a -q)
-}
-alias dockerstop="docker_stop"
+# FUNCTIONS
 
-#ip
+# show own ip
 show_ip(){
     wget http://ipinfo.io/ip -qO -
 }
 
-fvim() {
-  local files
-  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
-}
 
-# fuzzy grep open via ag
-fggrep() {
-  local file
-
-  file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1}')"
-
-  if [[ -n $file ]]
-  then
-     vim $file
-  fi
-}
-
-# fda - including hidden directories
-fcd() {
-  local dir
-  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
-}
-
-# fzf + git
-fga() {
-  local files
-  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && git add "${files[@]}"
-}
-
-#klo() {
-#  pod="$(kubectl get po -o wide|tail -n+2|fzf -n1 --reverse --tac --preview='kubectl logs --tail=20 --all-containers=true {1}' --preview-window=down:50%:hidden --bind=ctrl-p:toggle-preview --header="^P: Preview Logs"|awk '{print $1}')"
-#  if [[ -n $pod ]]; then
-#    kubectl logs --all-containers=true $pod
-#  fi
-#}
-
-eval $(thefuck --alias)
-
-# git
+# OTHERS
 source ~/.config/git/git_prompt
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/rdesousa/google-cloud-sdk/path.bash.inc' ]; then source '/home/rdesousa/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/rdesousa/google-cloud-sdk/completion.bash.inc' ]; then source '/home/rdesousa/google-cloud-sdk/completion.bash.inc'; fi
-
-export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/application_default_credentials.json
-
-# GO
-export GOSRC=/home/rdesousa/go/src/github.com/rodesousa
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
-#export GO111MODULE=on
-
-# k8s
-#source <(kubectl completion bash)
-#alias k8s="cat ~/.k8s"
-#alias kgp="kubectl get pods"
-#alias kgs="kubectl get secret"
-#alias kgss="kubectl get service"
-#alias kgin="kubectl get ingress"
-#alias kx="kubectl exec -it"
-#alias kdp="kubectl describe pod"
-#alias kl="kubectl logs"
-
-#helper
-alias helpers="l ~/.config/helper/"
-alias helper_cpu="cat ~/.config/helper/cpu"
-
-alias memo="vi ~/git/memo"
-alias tailwind="vi ~/git/memo/tailwind.md"
-alias dcompose='docker run -it --rm --mount type=bind,source="$(pwd)",target=/compose  --mount type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock  --workdir=/compose docker/compose'
-alias rapport="vi ~/git/arkhn/rapport_fin.md"
-
-alias gitmsg="firefox https://buzut.net/cours/versioning-avec-git/bien-nommer-ses-commits"
-
+eval $(thefuck --alias)
 PATH=$PATH:/home/rdesousa/bin
-
-alias vimconf="nvim ~/.config/nvim"
-alias lv="lvim"
