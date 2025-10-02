@@ -1,56 +1,102 @@
-.PHONY: packages
+common-package:
+	sudo apt-get install -y	curl tree fzf fd-find tig silversearcher-ag apt-transport-https \
+		ca-certificates gnupg-agent software-properties-common inotify-tools thefuck \
+		jq gimp inotify-tools ripgrep dirmngr gpg curl gawk ruby-dev
+	echo 'export PATH="$$HOME/.local/bin:$$PATH"' >> ~/.bashrc
+
+python:
+	sudo apt-get install -y	python3-dev python3-pip python3-setuptools inotify-tools
+
+mozilla-vpn:
+	sudo add-apt-repository ppa:mozillacorp/mozillavpn
+	sudo apt-get update
+	sudo apt install mozillavpn -y
+
+tailscale:
+	curl -fsSL https://tailscale.com/install.sh | sh
+
+docker:
+	sudo apt-get remove docker docker-engine docker.io containerd runc
+	sudo apt-get update
+	sudo apt-get install ca-certificates curl
+	sudo install -m 0755 -d /etc/apt/keyrings
+	sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+	sudo chmod a+r /etc/apt/keyrings/docker.asc
+	echo \
+	  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+	  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+	  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+	sudo apt-get update
+	sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+	sudo addgroup --system docker
+	sudo adduser $USER docker
+	newgrp docker
+	sudo chmod 666 /var/run/docker.sock
+
+git:
+	sudo add-apt-repository ppa:git-core/ppa
+	sudo apt update
+	sudo apt install -y git 
+	ln -snf $(CURDIR)/.gitconfig $(HOME)/.gitconfig
+	ln -snf $(CURDIR)/config/git $(HOME)/.config/git
+	git config --global user.email "dessroberto.gmail.com"
+	git config --global user.name "Roberto De Sousa"
+
+kitty:
+	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+	mkdir -p ~/.local/bin/
+	ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+	cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+	cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+	sed -i "s|Icon=kitty|Icon=$(HOME)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+	sed -i "s|Exec=kitty|Exec=$(HOME)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+	sed -i "s|TryExec=kitty|TryExec=$(HOME)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+	update-desktop-database ~/.local/share/applications/
+	echo 'kitty.desktop' > ~/.config/xdg-terminals.list
+	ln -snf $(CURDIR)/config/kitty $(HOME)/.config/kitty
+
+
 packages:
 	./install.sh
 
+ubuntu-emoji:
+	@sudo apt install fonts-noto-color-emoji
+
+nvim-kickstart:
+	sudo apt install make gcc ripgrep unzip git xclip 
+	ln -snf $(CURDIR)/config/nvim $(HOME)/.config/nvim
+	echo 'export PATH="/opt/nvim-linux-x86_64/bin:$$PATH"' >> $(HOME)/.bashrc
+
 ssh:
-	@ssh-keygen -t ed25519 -C "dessroberto@gmail.com"
+	ssh-keygen -t ed25519 -C "dessroberto@gmail.com"
 
-.PHONY: init
-init:
-	@sudo apt update
-	@mkdir $(HOME)/bin -p
-	@sudo apt install -y curl
-
-terminator:
-	@sudo add-apt-repository ppa:gnome-terminator
-	@sudo apt-get update
-	@sudo apt-get install terminator -y
+golang:
+	rm -rf /usr/local/go
+	wget https://go.dev/dl/go1.25.1.linux-amd64.tar.gz
+	sudo tar -C /usr/local -xzf go1.25.1.linux-amd64.tar.gz
+	echo 'export PATH=$$PATH:/usr/local/go/bin' >> $(HOME)/.bashrc
+	echo 'export GOPATH="$$HOME/go"' >> $(HOME)/.bashrc
+	echo 'export PATH="$$GOPATH/bin:$$PATH"' >> $(HOME)/.bashrc
 
 asdf:
-	@git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+	go install github.com/asdf-vm/asdf/cmd/asdf@v0.18.0
+	echo 'export PATH="$$HOME/.asdf/shims:$$PATH"' >> $(HOME)/.bashrc
+	echo '. <(asdf completion bash)' >> $(HOME)/.bashrc
 
-.PHONY: config
-config:
+bashrc:
 	@ln -snf $(CURDIR)/config/bashrc $(HOME)/.config/bashrc
-	@ln -snf $(CURDIR)/config.lua $(HOME)/.config/lvim/config.lua
-	@ln -snf $(CURDIR)/.bashrc $(HOME)/.bashrc
-	@ln -snf $(CURDIR)/.gitconfig $(HOME)/.gitconfig
-	@ln -snf $(CURDIR)/config/git $(HOME)/.config/git
-	@ln -snf $(CURDIR)/config/terminator $(HOME)/.config
-	@ln -snf $(CURDIR)/config/helper $(HOME)/.config/helper
+	echo 'source ~/.config/bashrc/alias' >> $(HOME)/.bashrc
 
 node:
-	@mkdir -p $HOME/.n
-	@asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-	@asdf install nodejs latest
-	@asdf global nodejs latest
-	@npm install -g npm
-	@npm cache clean -f
-	@npm install -g n
-	@n stable
-	@npm install diff-so-fancy -g
-	@npm install -g typescript-language-server typescript 
-
-.PHONY: neovim
-neovim:
-	@asdf plugin add neovim
-	@asdf install neovim latest
-	@asdf global neovim latest
-	@pip install pynvim --upgrade
-	@pip3 install pynvim --upgrade
-	@sudo apt install ruby-dev -y
-	@sudo gem install neovim 
-	@npm install -g neovim
+	mkdir -p $(HOME)/.n
+	asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+	asdf install nodejs 20.18.0
+	asdf set -u nodejs 20.18.0
+	asdf reshim nodejs
+	npm install -g npm
+	npm cache clean -f
+	npm install diff-so-fancy -g
+	npm install -g typescript-language-server typescript 
 
 COMPDIR=$(pkg-config --variable=completionsdir bash-completion)
 .PHONY: k8s
@@ -63,9 +109,10 @@ pandoc:
 	@firefox https://pandoc.org/installing.html
 
 elixir:
-	@asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git 
-	@asdf install elixir latest
-	@asdf global elixir latest
+	asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git 
+	asdf install elixir 1.18.4
+	asdf set -u elixir 1.18.4
+	asdf reshim elixir
 
 coc-elixir:
 	@git clone https://github.com/elixir-lsp/elixir-ls.git ~/.elixir-ls
@@ -74,12 +121,11 @@ coc-elixir-update:
 	@cd ~/.elixir-ls && mix deps.get && mix compile && mix elixir_ls.release -o release
 
 erlang:
-	@asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
-	@sudo apt-get -y install build-essential autoconf m4 libncurses5-dev libssh-dev xsltproc fop libncursesw5-dev
-	@asdf install erlang 25.1.2
-	@asdf global erlang 25.1.2
-
-all: init packages neovim config pandoc erlang elixir
+	#asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+	#sudo apt-get -y install build-essential autoconf m4 libncurses5-dev libssh-dev xsltproc fop libncursesw5-dev
+	asdf install erlang 25.1.2
+	asdf set -u erlang 25.1.2
+	asdf reshim erlang
 
 chrome:
 	@echo "https://doc.ubuntu-fr.org/google_chrome"
@@ -91,8 +137,4 @@ chrome:
 camera-dell:
 	@echo "https://www.dell.com/support/kbdoc/fr-fr/000203831/la-webcam-n-est-pas-detectee-sur-les-ordinateurs-portables-xps-13-plus-9320-fonctionnant-sous-ubuntu-22-04"
 
-spotify:
-	@curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -
-	@echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-	@sudo apt-get update  
-	@sudo apt-get install spotify-client
+# eval $(thefuck --alias)

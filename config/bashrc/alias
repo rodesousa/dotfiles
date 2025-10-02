@@ -11,6 +11,7 @@ alias gitmsg="firefox https://buzut.net/cours/versioning-avec-git/bien-nommer-se
 
 # UPDATE
 alias signal_update="sudo apt update && sudo apt install signal-desktop"
+alias hugo_server="~/go/bin/hugo serve"
 
 # FUNCTIONS
 
@@ -19,8 +20,6 @@ show_ip(){
     wget http://ipinfo.io/ip -qO -
 }
 
-
 # OTHERS
 source ~/.config/git/git_prompt
-eval $(thefuck --alias)
 PATH=$PATH:/home/rdesousa/bin

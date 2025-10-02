@@ -1,43 +1,70 @@
 # dotfiles
 
-## Instattion
+## Prerequisite
 
-`make all`
+Makefile: sudo apt install make
 
-Or:
-
-- `make init`
-- `make packages`
-- `make neovim`
-- `CURDIR=`pwd` make config`
-- `make pandoc`
-- `make erlang elixir`
-
-## Plus
-
-- Reload phoenix https://github.com/inotify-tools/inotify-tools/wiki
-- Install chrome: https://doc.ubuntu-fr.org/google_chrome
-- Camera problem: https://askubuntu.com/questions/1428961/dell-xps-13-webcam-not-recognized-under-ubuntu-22-04-1
-
-Ca a marché !
 ```
-sudo add-apt-repository ppa:oem-solutions-group/intel-ipu6
-sudo apt install linux-modules-ipu6-generic-hwe-22.04 linux-modules-ivsc-generic-hwe-22.04
-sudo apt install libcamhal-ipu6ep0
-sudo reboot
+make git common-package python
 ```
 
-- Add ssh key in github
-- Post install lunar: https://www.lunarvim.org/docs/installation/post-install#install-a-nerd-font
+## Kitty
 
-## Teams problem
+make kitty // marche pas
 
-https://askubuntu.com/questions/1195364/ubuntu-screen-sharing-on-google-chrome-not-working
+## BASHRC
 
-## Air pod problems
+```
+make config
+```
 
-https://askubuntu.com/questions/1408647/unable-to-pair-airpods-pro-with-ubuntu-22-04
+## NEOVIM
 
-## Lip problem
+1.
+```
+make ubuntu-emoji
+```
 
-- https://askubuntu.com/questions/1292489/dell-laptop-wont-suspend-when-lid-closed-ubuntu-20-04-1-lts
+2. Follow https://github.com/neovim/neovim/blob/master/INSTALL.md
+
+3. 
+```
+make nvim-kickstart
+```
+
+## docker
+
+```
+make docker
+```
+
+## ASDF
+
+1. Check the last version of asdf: https://asdf-vm.com/guide/getting-started.html
+2. Edit the makefile and set the last version
+3. If go are not installed `make golang`
+4.
+```
+make asdf
+```
+3. 
+
+## Node
+
+```
+make node
+```
+
+## Elixir & Erlang
+
+```
+make erlang elixir
+```
+
+## More
+
+- pandoc: make pandoc
+- mozzila vpn: make mozilla-vpn
+- tailscale: make tailscale
+- create key ssh: make ssh
+- chrome: make chrome
