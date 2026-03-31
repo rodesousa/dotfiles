@@ -168,6 +168,7 @@ vim.keymap.set('n', '<leader>ao', ':Telescope lsp_document_symbols<cr>', { desc 
 
 -- Buffer
 vim.keymap.set('n', '<leader>q', ':bdelete<cr>', {})
+vim.keymap.set('n', '<leader>Q', ':%bd|e#<cr>', {})
 
 -- abb
 vim.cmd 'iabbrev insp \\|> IO.inspect(label: "")<LEFT><LEFT>'
@@ -177,6 +178,7 @@ vim.cmd 'iabbrev eii <%= %><LEFT><LEFT><LEFT>'
 vim.cmd 'iabbrev eiex <SPACE><SPACE><SPACE><SPACE>iex>'
 vim.cmd 'iabbrev e! \\|>'
 vim.cmd 'iabbrev ass! ass = socket.assigns'
+vim.cmd 'iabbrev scope! %{current_scope: scope} = ass = socket.assigns'
 vim.cmd 'iabbrev icon! <.icon />'
 vim.cmd 'iabbrev div! <div></div><LEFT><LEFT><LEFT><LEFT><LEFT><LEFT>'
 
@@ -802,6 +804,14 @@ require('lazy').setup({
             },
           },
         },
+        elixirls = {
+          settings = {
+            elixirLS = {
+              dialyzerEnabled = false,
+            },
+          },
+        },
+        prismals = {}, -- Prisma LSP
       }
 
       -- Ensure the servers and tools above are installed
@@ -819,6 +829,7 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
         'basedpyright', -- Python LSP
         'elixir-ls', -- Elixir LSP
+        'prisma-language-server', -- Prisma LSP
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -903,6 +914,7 @@ require('lazy').setup({
             'rafamadriz/friendly-snippets',
             config = function()
               require('luasnip.loaders.from_vscode').lazy_load()
+              require('luasnip.loaders.from_vscode').lazy_load({ paths = { vim.fn.stdpath 'config' .. '/snippets' } })
               -- Charger les snippets JS aussi pour TS
               require('luasnip').filetype_extend('typescript', { 'javascript' })
               require('luasnip').filetype_extend('typescriptreact', { 'javascript' })
@@ -911,6 +923,11 @@ require('lazy').setup({
         },
       },
       'saadparwaiz1/cmp_luasnip',
+
+      -- Snippy engine
+      'dcampos/nvim-snippy',
+      'dcampos/cmp-snippy',
+      'honza/vim-snippets',
 
       -- Adds other completion capabilities.
       --  nvim-cmp does not ship with all sources by default. They are split
@@ -987,6 +1004,7 @@ require('lazy').setup({
         sources = {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
+          { name = 'snippy' },
           { name = 'path' },
         },
       }
@@ -1075,11 +1093,17 @@ require('lazy').setup({
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
+  -- Auto close/rename HTML/JSX tags
+  {
+    'windwp/nvim-ts-autotag',
+    opts = {},
+  },
+
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'elixir', 'vue', 'javascript', 'typescript' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc', 'elixir', 'vue', 'javascript', 'typescript', 'tsx', 'prisma' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
