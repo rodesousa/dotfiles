@@ -61,6 +61,7 @@ make node
 make erlang elixir
 ```
 
+
 ## More
 
 - pandoc: make pandoc
@@ -68,3 +69,23 @@ make erlang elixir
 - tailscale: make tailscale
 - create key ssh: make ssh
 - chrome: make chrome
+
+# Mac
+
+1. Ajouter dans `~/.zshrc` :
+```
+source ~/git/dotfiles/config/bashrc/mac-alias
+```
+
+2. Installer neovim :
+```
+brew install neovim
+mkdir -p ~/.config
+make mac-nvim
+```
+
+3. Recharger le shell :
+```
+source ~/.zshrc
+```
+

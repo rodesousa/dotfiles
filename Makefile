@@ -1,3 +1,10 @@
+mac-common-package:
+	brew install tig
+
+mise:
+	mise use -g npm:typescript-language-server
+	mise use -g node@22
+
 common-package:
 	sudo apt-get install -y	curl tree fzf fd-find tig silversearcher-ag apt-transport-https \
 		ca-certificates gnupg-agent software-properties-common inotify-tools thefuck \
@@ -33,14 +40,19 @@ docker:
 	newgrp docker
 	sudo chmod 666 /var/run/docker.sock
 
-git:
-	sudo add-apt-repository ppa:git-core/ppa
-	sudo apt update
-	sudo apt install -y git 
+git-config:
 	ln -snf $(CURDIR)/.gitconfig $(HOME)/.gitconfig
 	ln -snf $(CURDIR)/config/git $(HOME)/.config/git
 	git config --global user.email "dessroberto.gmail.com"
 	git config --global user.name "Roberto De Sousa"
+
+git: git-config
+	sudo add-apt-repository ppa:git-core/ppa
+	sudo apt update
+	sudo apt install -y git
+
+mac-git: git-config
+	brew install diff-so-fancy
 
 kitty:
 	curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
@@ -136,5 +148,12 @@ chrome:
 
 camera-dell:
 	@echo "https://www.dell.com/support/kbdoc/fr-fr/000203831/la-webcam-n-est-pas-detectee-sur-les-ordinateurs-portables-xps-13-plus-9320-fonctionnant-sous-ubuntu-22-04"
+
+mac-nvim:
+	brew install ripgrep
+	ln -snf $(CURDIR)/config/nvim $(HOME)/.config/nvim
+
+mac-zshrc:
+	cat $(CURDIR)/.zshrc >> $(HOME)/.zshrc
 
 # eval $(thefuck --alias)

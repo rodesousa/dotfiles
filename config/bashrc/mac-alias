@@ -1,0 +1,6 @@
+#alias
+
+alias l='ls -l'
+alias la='ls -la'
+alias rtl='ls -rtl'
+alias ..='cd ..'

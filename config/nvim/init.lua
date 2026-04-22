@@ -847,9 +847,10 @@ require('lazy').setup({
       }
 
       -- Setup ts_ls manually (installed via npm, not Mason)
-      require('lspconfig').ts_ls.setup {
+      vim.lsp.config('ts_ls', {
         capabilities = capabilities,
-      }
+      })
+      vim.lsp.enable('ts_ls')
     end,
   },
 

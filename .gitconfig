@@ -1,6 +1,6 @@
 [user]
-  name = rodesousa
-  email = dessroberto@gmail.com
+	name = Roberto De Sousa
+	email = dessroberto.gmail.com
 [core]
   autocrlf = input
   editor = nvim
