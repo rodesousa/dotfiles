@@ -37,6 +37,8 @@
   path = ~/.config/git/arkhn
 [includeIf "gitdir:~/git/sapiologie/"]
   path = ~/.config/git/sapiologie
+[includeIf "gitdir:/Users/Roberto/git/carbon-tracker-mvp"]
+  path = ~/.config/git/kiosk
 
 [github]
 	user = rodesousa

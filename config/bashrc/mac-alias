@@ -1,6 +1,9 @@
 #alias
 
+alias showalias="~/git/dotfiles/config/bashrc/mac-alias"
 alias l='ls -l'
 alias la='ls -la'
 alias rtl='ls -rtl'
 alias ..='cd ..'
+alias colorghost="ghostty +list-themes"
+alias ghostyconfig="nvim ~/.config/ghostty/config"
